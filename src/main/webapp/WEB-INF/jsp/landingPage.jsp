@@ -12,6 +12,7 @@
     <meta charset="utf-8">
     <title>The Ripieno Singers</title>
 
+    <link rel="stylesheet" href="/resources/css/landingpage.css" type="text/css"/>
 </head>
 
 <body>

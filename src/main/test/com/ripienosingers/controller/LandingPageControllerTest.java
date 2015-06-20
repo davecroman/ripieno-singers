@@ -1,4 +1,4 @@
-package com.example.controller;
+package com.ripienosingers.controller;
 
 import org.junit.Before;
 
