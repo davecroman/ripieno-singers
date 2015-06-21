@@ -25,3 +25,7 @@ Then run it with:
 Run the app:
 
 `localhost:8080`
+
+## Acknowledgement
+
+UI Design and Mockups by **Danielle Marie Manuel** and **Jayson Labatorio**
