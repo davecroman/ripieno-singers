@@ -22,14 +22,21 @@ body {
 
 .containeritem-header {
     font-family: 'Raleway', sans-serif;
-    color: #FFFFFF;
     font-size: 100px;
     line-height: 90%;
 }
 
 .containeritem-subheader {
     font-family: 'Raleway', sans-serif;
-    color: #FFFFFF;
     font-size: 20px;
     line-height: 85%;
+}
+
+.entersite-button {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    margin: 10px;
+    width: 50%;
+    letter-spacing: 3px;
+    background-color: rgba(0,0,0,0.5);
 }

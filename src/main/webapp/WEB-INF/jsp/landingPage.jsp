@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/resources/css/landingpage.css" type="text/css"/>
     <link rel="stylesheet" href="/resources/css/main.css" type="text/css"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -40,6 +40,9 @@
             <div class="round-button">
                 <i class="fa fa-instagram fa-3x"></i>
             </div>
+        </div>
+        <div class="containeritem entersite-button">
+            <p> WE ARE COMING SOON </p>
         </div>
 
     </div>
