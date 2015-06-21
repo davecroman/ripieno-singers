@@ -13,9 +13,36 @@
     <title>The Ripieno Singers</title>
 
     <link rel="stylesheet" href="/resources/css/landingpage.css" type="text/css"/>
+    <link rel="stylesheet" href="/resources/css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
+
+    <div class="main-container">
+        <div class="containeritem-subheader"> THE </div>
+        <div class="containeritem-header"> RIPIENO SINGERS </div>
+        <div class="containeritem-subheader"> INC. </div>
+        <div class="containeritem">
+            <i class="fa fa-ellipsis-h fa-3x"> </i>
+        </div>
+        <div class="containeritem">
+            <div class="round-button">
+                <i class="fa fa-facebook fa-3x"></i>
+            </div>
+            <div class="round-button">
+                <i class="fa fa-twitter fa-3x"></i>
+            </div>
+            <div class="round-button">
+                <i class="fa fa-youtube fa-3x"></i>
+            </div>
+            <div class="round-button">
+                <i class="fa fa-instagram fa-3x"></i>
+            </div>
+        </div>
+
+    </div>
 
 </body>
 

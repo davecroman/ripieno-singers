@@ -2,3 +2,34 @@ body {
     background-image: url('/resources/jpg/welcomebg.jpg');
     background-repeat: no-repeat;
 }
+
+.main-container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    height: 50%;
+}
+
+.containeritem {
+    width: 100%;
+    color: white;
+}
+
+.containeritem-header {
+    font-family: 'Raleway', sans-serif;
+    color: #FFFFFF;
+    font-size: 100px;
+    line-height: 90%;
+}
+
+.containeritem-subheader {
+    font-family: 'Raleway', sans-serif;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 85%;
+}
