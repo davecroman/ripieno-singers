@@ -27,18 +27,24 @@
         <div class="containeritem">
             <i class="fa fa-ellipsis-h fa-3x"> </i>
         </div>
-        <div class="containeritem">
+        <div class="containeritem" id="facebookButton">
             <div class="round-button">
-                <i class="fa fa-facebook fa-3x"></i>
+                <a href="https://www.facebook.com/pages/The-Ripieno-Singers-Inc/752278521519093?fref=ts" target="_blank">
+                    <i class="fa fa-facebook fa-3x white-font"></i>
+                </a>
             </div>
-            <div class="round-button">
-                <i class="fa fa-twitter fa-3x"></i>
+            <div class="round-button" id="twitterButton">
+                <a href="https://twitter.com/ripienosingers" target="_blank">
+                    <i class="fa fa-twitter fa-3x white-font"></i>
+                </a>
             </div>
-            <div class="round-button">
-                <i class="fa fa-youtube fa-3x"></i>
+            <div class="round-button" id="youtubeButton">
+                <i class="fa fa-youtube fa-3x white-font"></i>
             </div>
-            <div class="round-button">
-                <i class="fa fa-instagram fa-3x"></i>
+            <div class="round-button" id="instagramButton">
+                <a href="https://instagram.com/theripienosingersinc/" target="_blank">
+                    <i class="fa fa-instagram fa-3x white-font"></i>
+                </a>
             </div>
         </div>
         <div class="containeritem entersite-button">
