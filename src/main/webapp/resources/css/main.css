@@ -21,11 +21,45 @@
     color: white;
 }
 
-body {
-    background-color: #000000;
-}
-
 a {
     color: inherit;
     text-decoration: none;
+}
+
+.wrap {
+    margin-top: 20px;
+    margin: 10px auto;
+    max-width: 1000px;
+}
+
+.left-column {
+    width: 100%;
+}
+
+.right-column {
+    width: 100%;
+}
+
+p {
+    color: white;
+    font-family: sans-serif;
+    line-height: 160%;
+}
+
+@media screen and (min-width: 600px) {
+
+    .left-column {
+        width: 50%;
+        float: left;
+    }
+
+    .right-column {
+        width: 50%;
+        float: right;
+    }
+}
+
+.with-margin-left-right {
+    margin-left: 15px;
+    margin-right: 15px;
 }

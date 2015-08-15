@@ -1,0 +1,20 @@
+.header {
+     font-family: 'Raleway', sans-serif;
+     color: #FFFFFF;
+     font-size: 3.5em;
+     margin-left: 5px;
+ }
+
+.subheader {
+    font-family: 'Raleway', sans-serif;
+    color: #FFFFFF;
+    font-size: 2em;
+    margin-left: 5px;
+}
+
+body {
+    margin: 0;
+    background-color: #000000;
+    background-image: url('/resources/jpg/blurred.jpg');
+    background-repeat: no-repeat;
+}
