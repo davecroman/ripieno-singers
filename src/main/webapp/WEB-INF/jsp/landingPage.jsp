@@ -47,8 +47,11 @@
                 </a>
             </div>
         </div>
-        <div class="containeritem entersite-button">
-            <p> WE ARE COMING SOON </p>
+
+        <div class="containeritem">
+            <div class="entersite-button">
+                <a href="home"> CONTINUE TO SITE </a>
+            </div>
         </div>
 
     </div>

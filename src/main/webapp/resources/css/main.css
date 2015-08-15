@@ -20,3 +20,12 @@
 .white-font {
     color: white;
 }
+
+body {
+    background-color: #000000;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
