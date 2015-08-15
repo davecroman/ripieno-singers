@@ -39,7 +39,9 @@
                 </a>
             </div>
             <div class="round-button" id="youtubeButton">
-                <i class="fa fa-youtube fa-3x white-font"></i>
+                <a href="https://www.youtube.com/channel/UCbhMmSRV3YspiV33sbBHxvA" target="_blank">
+                    <i class="fa fa-youtube fa-3x white-font"></i>
+                </a>
             </div>
             <div class="round-button" id="instagramButton">
                 <a href="https://instagram.com/theripienosingersinc/" target="_blank">
