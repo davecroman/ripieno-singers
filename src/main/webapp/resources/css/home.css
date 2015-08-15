@@ -14,7 +14,7 @@
 
 body {
     margin: 0;
-    background-color: #000000;
+    background-color: black;
     background-image: url('/resources/jpg/blurred.jpg');
     background-repeat: no-repeat;
 }

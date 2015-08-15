@@ -1,5 +1,6 @@
 body {
     background-image: url('/resources/jpg/welcomebg.jpg');
+    background-color: black;
     background-repeat: no-repeat;
 }
 
