@@ -7,24 +7,36 @@
 3. Install **Git**
 4. Run this command in the terminal
 
-```
-git clone https://github.com/davecroman/ripieno-singers.git
-cd ripieno-singers
-```
+    `git clone https://github.com/davecroman/ripieno-singers.git`
+
 
 ## Running the application locally
 
+Go to the root of the project
+
+    cd ripieno-singers
+        
+### Option 1
+
 First build with:
 
-    $mvn clean install
+    mvn clean install
 
 Then run it with:
 
-    $java -jar target/dependency/webapp-runner.jar target/*.war
+    java -jar target/dependency/webapp-runner.jar target/*.war
 
-Run the app:
+To run the app, open your browser and enter the following:
 
-`localhost:8080`
+    localhost:8080
+    
+### Option 2
+
+Alternatively, you can run the app from the root of the project using this command:
+
+    ./build.sh
+    
+Once the build has finished, open your browser and go to `localhost:8080`
 
 ## Acknowledgement
 
