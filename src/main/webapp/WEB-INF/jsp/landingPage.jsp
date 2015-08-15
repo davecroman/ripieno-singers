@@ -12,7 +12,9 @@
     <meta charset="utf-8">
     <title>The Ripieno Singers</title>
 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/resources/css/landingpage.css" type="text/css"/>
+    <link rel="stylesheet" href="/resources/css/animate.min.css" type="text/css"/>
     <link rel="stylesheet" href="/resources/css/main.css" type="text/css"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
@@ -21,13 +23,13 @@
 <body>
 
     <div class="main-container">
-        <div class="containeritem-subheader"> THE </div>
-        <div class="containeritem-header"> RIPIENO SINGERS </div>
-        <div class="containeritem-subheader"> INC. </div>
-        <div class="containeritem">
+        <div class="containeritem-subheader  animated fadeInDown"> THE </div>
+        <div class="containeritem-header  animated fadeInDown"> RIPIENO SINGERS </div>
+        <div class="containeritem-subheader  animated fadeInDown"> INC. </div>
+        <div class="containeritem  animated fadeIn">
             <i class="fa fa-ellipsis-h fa-3x"> </i>
         </div>
-        <div class="containeritem" id="facebookButton">
+        <div class="containeritem  animated fadeInUp" id="facebookButton">
             <div class="round-button">
                 <a href="https://www.facebook.com/pages/The-Ripieno-Singers-Inc/752278521519093?fref=ts" target="_blank">
                     <i class="fa fa-facebook fa-3x white-font"></i>
@@ -50,7 +52,7 @@
             </div>
         </div>
 
-        <div class="containeritem">
+        <div class="containeritem animated fadeIn">
             <div class="entersite-button">
                 <a href="home"> CONTINUE TO SITE </a>
             </div>
