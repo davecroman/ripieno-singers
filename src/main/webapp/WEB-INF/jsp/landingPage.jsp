@@ -18,6 +18,20 @@
     <link rel="stylesheet" href="/resources/css/main.css" type="text/css"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
+
+    <script type="application/ld+json">
+      {
+        "@context" : "http://schema.org",
+        "@type" : "Organization",
+        "name" : "Ripieno Singers Inc.",
+        "url" : "http://www.ripienosingers.com/",
+        "sameAs" : [
+          "https://www.facebook.com/pages/The-Ripieno-Singers-Inc/752278521519093?fref=ts",
+          "https://twitter.com/ripienosingers",
+          "https://instagram.com/theripienosingersinc/"
+        ]
+      }
+    </script>
 </head>
 
 <body>
