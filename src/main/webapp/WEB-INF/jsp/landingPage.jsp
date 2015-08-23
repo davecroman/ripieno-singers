@@ -21,7 +21,7 @@
         "url" : "http://www.ripienosingers.com/",
         "sameAs" : [
           "https://www.facebook.com/pages/The-Ripieno-Singers-Inc/752278521519093?fref=ts",
-          "https://twitter.com/ripienosingers",
+          "https://twitter.com/dripienosingers",
           "https://instagram.com/theripienosingersinc/"
         ]
       }
