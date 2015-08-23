@@ -44,7 +44,7 @@
                 </a>
             </div>
             <div class="round-button" id="twitterButton">
-                <a href="https://twitter.com/ripienosingers" target="_blank">
+                <a href="https://twitter.com/dripienosingers" target="_blank">
                     <i class="fa fa-twitter fa-3x white-font"></i>
                 </a>
             </div>
