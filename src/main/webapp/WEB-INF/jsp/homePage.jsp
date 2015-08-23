@@ -66,7 +66,7 @@
                   </li>
                   <li>
                       <img src="/resources/slider/5.png">
-                      <div class="caption left-align bottomized shadowed-text">
+                      <div class="caption right-align shadowed-text">
                         <h3>Unang Hirit Guesting</h3>
                         <h5 class="light white-text">Unang Hirit guesting of PUPLHS Chorale with its lovely hosts Lhar Santiago, Lyn Ching-Pascual, Arnold Clavio, and Rhea Santos</h5>
                       </div>
