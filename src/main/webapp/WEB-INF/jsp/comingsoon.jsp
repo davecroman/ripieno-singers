@@ -33,7 +33,7 @@
     <%@ include file="header.jspf" %>
 
     <main>
-        <div class="center header animated zoomInDown">
+        <div class="centered-container header animated zoomInDown">
             This page is coming soon!
         </div>
     </main>

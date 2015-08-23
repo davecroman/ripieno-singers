@@ -36,7 +36,7 @@
 
 <body>
 
-    <div class="main-container">
+    <div class="centered-container">
         <div class="containeritem-subheader  animated fadeInDown"> THE </div>
         <div class="containeritem-header  animated fadeInDown"> RIPIENO SINGERS </div>
         <div class="containeritem-subheader  animated fadeInDown"> INC. </div>

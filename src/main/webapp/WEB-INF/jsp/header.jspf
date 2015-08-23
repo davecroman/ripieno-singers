@@ -1,6 +1,22 @@
 <header>
     <div class="nav animated fadeInDown">
       <ul>
+        <li>
+            <div class="flex-display">
+                <a class="with-side-padding-10" href="https://www.facebook.com/pages/The-Ripieno-Singers-Inc/752278521519093?fref=ts" target="_blank">
+                    <i class="fa fa-facebook fa-1x white-font"></i>
+                </a>
+                <a class="with-side-padding-10" href="https://twitter.com/ripienosingers" target="_blank">
+                    <i class="fa fa-twitter fa-1x white-font"></i>
+                </a>
+                <a class="with-side-padding-10" href="https://www.youtube.com/channel/UCbhMmSRV3YspiV33sbBHxvA" target="_blank">
+                    <i class="fa fa-youtube fa-1x white-font"></i>
+                </a>
+                <a class="with-side-padding-10" href="https://instagram.com/theripienosingersinc/" target="_blank">
+                    <i class="fa fa-instagram fa-1x white-font"></i>
+                </a>
+            </div>
+        </li>
         <li><a href="home">Home</a></li>
         <li><a href="comingsoon">About Us</a></li>
         <li><a href="comingsoon">News</a></li>
