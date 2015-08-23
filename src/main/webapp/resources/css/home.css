@@ -15,6 +15,16 @@
 body {
     margin: 0;
     background-color: black;
-    background-image: url('/resources/jpg/blurred.jpg');
     background-repeat: no-repeat;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.bottomized {
+    margin-top: 11rem;
+}
+
+.shadowed-text {
+    text-shadow: 4px 4px 2px rgb(20, 20, 20);
 }

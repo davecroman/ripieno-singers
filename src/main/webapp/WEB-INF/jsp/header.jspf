@@ -1,0 +1,12 @@
+<header>
+    <div class="nav animated fadeInDown">
+      <ul>
+        <li><a href="home">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Members</a></li>
+        <li><a href="#">Calendar</a></li>
+      </ul>
+    </div>
+</header>
