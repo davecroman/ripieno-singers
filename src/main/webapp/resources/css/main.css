@@ -1,6 +1,10 @@
 a {
-    color: inherit;
+    color: #EFEFEF !important;
     text-decoration: none;
+}
+
+a:hover {
+    color: white !important;
 }
 
 p {
@@ -79,6 +83,8 @@ main {
     padding: 10px;
     max-width: 1000px;
     display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
 }
 
 .text-block {
@@ -104,6 +110,15 @@ main {
     .right-column {
         width: 50%;
         float: right;
+    }
+
+    .wrap {
+        margin: 10px auto;
+        padding: 10px;
+        max-width: 1000px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
     }
 }
 
