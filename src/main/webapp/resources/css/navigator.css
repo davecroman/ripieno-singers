@@ -11,7 +11,9 @@
   line-height: 40px;
   height: 40px;
   border-bottom: 1px solid #888;
+  display: -moz-inline-stack;
 }
+
 
 .nav a {
   text-decoration: none;
@@ -49,6 +51,12 @@
     margin-right: -4px;
   }
 
+  @supports (display: -moz-inline-stack) {
+    .nav li {
+      display: -moz-inline-stack;
+      margin-right: -4px;
+    }
+  }
   /* Options 2 - Float */
   /*
   .nav li {

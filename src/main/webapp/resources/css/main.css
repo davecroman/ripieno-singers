@@ -50,7 +50,18 @@ main {
 }
 
 .flex-display {
-    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    -webkit-box-pack: start; /* justify-content */
+    -webkit-box-align: start; /* align-items */
+}
+
+@supports (flex-wrap: wrap) { /* hide from the incomplete Flexbox implementation in Firefox */
+    .flex-display {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+    }
 }
 
 .with-margin-left-right {
