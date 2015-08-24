@@ -75,11 +75,15 @@ main {
 }
 
 .wrap {
-    margin-top: 20px;
     margin: 10px auto;
+    padding: 10px;
     max-width: 1000px;
-    background-color: #222222;
     display: flex;
+}
+
+.text-block {
+    background-color: #222222;
+    padding: 10px;
 }
 
 .left-column {

@@ -1,7 +1,9 @@
 .header {
      font-family: 'Raleway', sans-serif;
-     color: #FFFFFF;
+     text-align: center;
      font-size: 3.5em;
+     line-height: 1;
+     color: white;
 }
 
 .subheader {

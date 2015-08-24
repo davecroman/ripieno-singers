@@ -62,15 +62,15 @@
                 <div class="subheader">
                     Services Offered
                 </div>
-                <p class="with-margin-left-right animated fadeIn">
-                    As a choral group, The Ripieno Singers performs and entertains in various forms and styles of singing: classical, pop, ballad, folk and more in plentiful events and occasions such as weddings, seminars, conferences, concerts, workshops, birthdays and wakes as well. Solo, Duo and Small group performances will surely showcase the group's exceptional talents in a variety of events to capture the hearts of the listeners.Invite us to perform on your events and be enchanted with our God given talents!
+                <p class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
+                    As a choral group, <b class="white-text"> The Ripieno Singers </b> performs and entertains in various forms and styles of singing: classical, pop, ballad, folk and more in plentiful events and occasions such as weddings, seminars, conferences, concerts, workshops, birthdays and wakes as well. Solo, Duo and Small group performances will surely showcase the group's exceptional talents in a variety of events to capture the hearts of the listeners. <br><br> Invite us to perform on your events and be enchanted with our God given talents!
                 </p>
 
                 <div class="subheader">
                     Did you know?
                 </div>
-                <p class="with-margin-left-right animated fadeIn">
-                    Ephraim Gianan is the only member able to attend all major competitions joined by the group here (Davao) and abroad (Malaysia, Vietnam, Guam).
+                <p class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
+                    <b class="white-text"> Ephraim Gianan </b> is the only member able to attend all major competitions joined by the group here (Davao) and abroad (Malaysia, Vietnam, Guam).
                 </p>
             </div>
 
@@ -78,8 +78,8 @@
                 <div class="header">
                     The Ripieno <br> Singers Inc
                 </div>
-                <p class="with-margin-left-right animated fadeIn">
-                    The Ripieno Singers is a newly founded group in 2014 that aims to continuously stretch God's love through choral singing. Following its roots, all of its members are students and graduates of Polytechnic University of the Philippines Laboratory High School and were members of PUPLHS Chorale. Many of them are now enrolled in different universities around Metro Manila and some of them are now working as professionals. Because of its unique way of connecting to people through their music, Mr. Jarin after resigning from his post as the conductor of PUPLHS Chorale in 2014 together with his members, decided to create the “The Ripieno Singers Inc.” to keep their friendships, to continue their passion and commitment to God in sharing and inspiring other people through singing.
+                <p class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
+                    <b class="white-text"> The Ripieno Singers </b> is a newly founded group in 2014 that aims to continuously stretch God&#39;s love through choral singing. Following its roots, all of its members are students and graduates of Polytechnic University of the Philippines Laboratory High School and were members of <b class="white-text"> PUPLHS Chorale </b>. Many of them are now enrolled in different universities around Metro Manila and some of them are now working as professionals. <br><br> Because of its unique way of connecting to people through their music, Mr. Jarin after resigning from his post as the conductor of PUPLHS Chorale in 2014 together with his members, decided to create the &quot;The Ripieno Singers Inc.&quot; to keep their friendships, to continue their passion and commitment to God in sharing and inspiring other people through singing.
                 </p>
 
                 <div style="video-container responsive-video text-align:center">
