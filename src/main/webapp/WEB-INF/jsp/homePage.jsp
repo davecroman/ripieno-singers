@@ -76,7 +76,7 @@
 
             <div class="right-column">
                 <div class="header">
-                    The Ripieno <br> Singers Inc
+                    The Ripieno <br> Singers Inc.
                 </div>
                 <p class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
                     <b class="white-text"> The Ripieno Singers </b> is a newly founded group in 2014 that aims to continuously stretch God&#39;s love through choral singing. Following its roots, all of its members are students and graduates of Polytechnic University of the Philippines Laboratory High School and were members of <b class="white-text"> PUPLHS Chorale </b>. Many of them are now enrolled in different universities around Metro Manila and some of them are now working as professionals. <br><br> Because of its unique way of connecting to people through their music, Mr. Jarin after resigning from his post as the conductor of PUPLHS Chorale in 2014 together with his members, decided to create the &quot;The Ripieno Singers Inc.&quot; to keep their friendships, to continue their passion and commitment to God in sharing and inspiring other people through singing.
