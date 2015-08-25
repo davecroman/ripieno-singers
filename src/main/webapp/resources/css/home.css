@@ -23,10 +23,6 @@ body {
     flex-direction: column;
 }
 
-.bottomized {
-    margin-top: 11rem;
-}
-
 .shadowed-text {
     text-shadow: 4px 4px 2px rgb(20, 20, 20);
 }

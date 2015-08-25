@@ -37,7 +37,7 @@
               <li>
                 <img src="/resources/slider/4.png">
                 <div class="caption left-align bottomized shadowed-text">
-                  <h3>With Ms. Lani Misalucha</h3>
+                  <h4>With Ms. Lani Misalucha</h4>
                   <h5 class="light white-text">A photo taken with the Asia's Nightingale, Lani Misalucha, after shooting a clip for GMA News' show Follow That Star</h5>
                 </div>
               </li>
@@ -52,7 +52,7 @@
                 <img src="/resources/slider/6.png">
                 <div class="caption left-align bottomized shadowed-text">
                   <h4>Unang Hirit Guesting</h4>
-                  <h5 class="light white-text">TV guesting of the PUPLHS Chorale in Unang Hirit after winning a Gold diploma and placing second in Mixed Youth Choir Category from the 1st Vietnam International Choir Festival and Competition held in Hoi An, Quang Nam, Vietnam</h5>
+                  <h5 class="light white-text">After winning a Gold diploma and placing second in Mixed Youth Choir Category from the 1st Vietnam International Choir Festival and Competition held in Hoi An, Quang Nam, Vietnam</h5>
                 </div>
               </li>
             </ul>
