@@ -1,16 +1,19 @@
+.nav {
+  background-color: #333333;
+}
+
 .nav ul {
   list-style: none;
   background-color: #333333;
   text-align: center;
   padding: 0;
   margin: 0;
+
 }
 .nav li {
-  font-family: 'Raleway', sans-serif;
   font-size: 1.0em;
   line-height: 40px;
   height: 40px;
-  border-bottom: 1px solid #888;
   display: -moz-inline-stack;
 }
 
@@ -38,7 +41,6 @@
 
 @media screen and (min-width: 600px) {
   .nav li {
-    border-bottom: none;
     height: 50px;
     line-height: 50px;
     font-size: 1.2em;

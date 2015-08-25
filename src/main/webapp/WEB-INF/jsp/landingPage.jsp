@@ -40,22 +40,22 @@
         <div class="containeritem  animated fadeInUp" id="facebookButton">
             <div class="round-button">
                 <a href="https://www.facebook.com/pages/The-Ripieno-Singers-Inc/752278521519093?fref=ts" target="_blank">
-                    <i class="fa fa-facebook fa-3x white-font"></i>
+                    <i class="fa fa-facebook fa-3x white-text"></i>
                 </a>
             </div>
             <div class="round-button" id="twitterButton">
                 <a href="https://twitter.com/dripienosingers" target="_blank">
-                    <i class="fa fa-twitter fa-3x white-font"></i>
+                    <i class="fa fa-twitter fa-3x white-text"></i>
                 </a>
             </div>
             <div class="round-button" id="youtubeButton">
                 <a href="https://www.youtube.com/channel/UCbhMmSRV3YspiV33sbBHxvA" target="_blank">
-                    <i class="fa fa-youtube fa-3x white-font"></i>
+                    <i class="fa fa-youtube fa-3x white-text"></i>
                 </a>
             </div>
             <div class="round-button" id="instagramButton">
                 <a href="https://instagram.com/theripienosingersinc/" target="_blank">
-                    <i class="fa fa-instagram fa-3x white-font"></i>
+                    <i class="fa fa-instagram fa-3x white-text"></i>
                 </a>
             </div>
         </div>
