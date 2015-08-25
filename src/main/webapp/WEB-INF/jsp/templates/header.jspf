@@ -27,7 +27,17 @@
     </div>
     <div class="nav animated fadeIn hide-on-med-and-up">
       <div>
-        <a href="#" style="width:100px"><i class="fa fa-bars fa-2x" style="padding:10px"></i></a>
+        <a href="#" style="width:50px" id="menu-button"><i class="fa fa-bars fa-2x" style="padding:10px"></i></a>
+      </div>
+      <div class="hide animated fadeIn" id="side-nav">
+         <div class="collection">
+            <a href="/home" class="collection-item black-text">Home</a>
+            <a href="/comingsoon" class="collection-item black-text">About</a>
+            <a href="/comingsoon" class="collection-item black-text">News</a>
+            <a href="/comingsoon" class="collection-item black-text">Gallery</a>
+            <a href="/comingsoon" class="collection-item black-text">Members</a>
+            <a href="/comingsoon" class="collection-item black-text">Calendar</a>
+          </div>
       </div>
     </div>
 </header>
