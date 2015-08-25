@@ -18,4 +18,6 @@
     <%@ include file="templates/footer.jspf" %>
 </body>
 
+<%@ include file="templates/script.jspf" %>
+
 </html>

@@ -98,13 +98,9 @@
        $('.slider').slider();
       }); // end of document ready
     })(jQuery); // end of jQuery name space
-
-    $( "#menu-button" ).click(function() {
-      if($("#side-nav").hasClass("hide")) {
-        $("#side-nav").removeClass("hide");
-      } else {
-        $("#side-nav").addClass("hide");
-      }
-    });
 </script>
+
+<%@ include file="templates/script.jspf" %>
+
 </html>
+
