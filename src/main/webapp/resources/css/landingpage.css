@@ -51,7 +51,7 @@ body {
     display: inline-block;
     font-family: 'Raleway', sans-serif;
     margin: 10px;
-    width: 70%;
+    width: 100%;
     letter-spacing: 3px;
     background-color: rgba(0,0,0,0.5);
     transition: .3s background-color;

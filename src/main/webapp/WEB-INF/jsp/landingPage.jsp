@@ -14,6 +14,12 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.0/js/materialize.min.js"></script>
+
     <script type="application/ld+json">
       {
         "@context" : "http://schema.org",
@@ -31,8 +37,8 @@
 
 <body>
 
-    <div class="centered-container">
-        <div class="containeritem-subheader  animated fadeInDown"> THE </div>
+    <div class="centered-container hide-on-small-only">
+        <div class="containeritem-subheader animated fadeInDown"> THE </div>
         <div class="containeritem-header  animated fadeInDown"> RIPIENO SINGERS </div>
         <div class="containeritem-subheader  animated fadeInDown"> INC. </div>
         <div class="containeritem  animated fadeIn">
@@ -70,5 +76,12 @@
     </div>
 
 </body>
+
+<script>
+    if (window.outerWidth < 600){
+        window.location.replace("http://www.ripienosingers.com/home")
+    }
+
+</script>
 
 </html>
