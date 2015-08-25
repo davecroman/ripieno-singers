@@ -15,7 +15,7 @@
               <li>
                 <img src="/resources/slider/1.png">
                 <div class="caption left-align bottomized shadowed-text">
-                  <h3>With Sir Mark Carpio</h3>
+                  <h4>With Sir Mark Carpio</h4>
                   <h5 class="light white-text">The chorale with Sir Mark Carpio, the choir master of the world renowned Philippine Madrigal Singers</h5>
                 </div>
               </li>
@@ -23,14 +23,14 @@
               <li>
                 <img src="/resources/slider/2.png">
                 <div class="caption left-align bottomized shadowed-text">
-                  <h3>News To Go</h3>
+                  <h4>News To Go</h4>
                   <h5 class="light white-text">The group with Ms. Kara David and Mr. Howie Severino of GMA News' News To Go after being featured and interviewed in their segment</h5>
                 </div>
               </li>
               <li>
                   <img src="/resources/slider/3.png">
                   <div class="caption left-align bottomized shadowed-text">
-                    <h3>With Ms. Jessica Soho</h3>
+                    <h4>With Ms. Jessica Soho</h4>
                     <h5 class="light white-text">A photo opportunity with Ms. Jessica Soho featuring PUPLHS Chorale in Kapuso Mo, Jessica Soho.</h5>
                   </div>
               </li>
@@ -44,14 +44,14 @@
               <li>
                   <img src="/resources/slider/5.png">
                   <div class="caption right-align shadowed-text">
-                    <h3>Unang Hirit Guesting</h3>
+                    <h4>Unang Hirit Guesting</h4>
                     <h5 class="light white-text">Unang Hirit guesting of PUPLHS Chorale with its lovely hosts Lhar Santiago, Lyn Ching-Pascual, Arnold Clavio, and Rhea Santos</h5>
                   </div>
               </li>
               <li>
                 <img src="/resources/slider/6.png">
                 <div class="caption left-align bottomized shadowed-text">
-                  <h3>Unang Hirit Guesting</h3>
+                  <h4>Unang Hirit Guesting</h4>
                   <h5 class="light white-text">TV guesting of the PUPLHS Chorale in Unang Hirit after winning a Gold diploma and placing second in Mixed Youth Choir Category from the 1st Vietnam International Choir Festival and Competition held in Hoi An, Quang Nam, Vietnam</h5>
                 </div>
               </li>
