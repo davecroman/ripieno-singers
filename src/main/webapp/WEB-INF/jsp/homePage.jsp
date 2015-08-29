@@ -59,6 +59,11 @@
         </div>
         <div class="wrap">
             <div class="left-column">
+                <sec:authorize access="hasRole('ADMIN')">
+                  <div class="subheader">
+                    You are an administrator
+                  </div>
+                </sec:authorize>
                 <div class="subheader">
                     Services Offered
                 </div>

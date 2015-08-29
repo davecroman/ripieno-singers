@@ -48,14 +48,11 @@ body {
   }
 
   .entersite-button {
-    display: inline-block;
-    font-family: 'Raleway', sans-serif;
-    margin: 10px;
     width: 100%;
-    letter-spacing: 3px;
-    background-color: rgba(0,0,0,0.5);
-    transition: .3s background-color;
-    border: 2px solid #f5f5f5;
-    padding: 10px;
+  }
+
+  body {
+    background-color: black;
+    background-image: initial;
   }
 }

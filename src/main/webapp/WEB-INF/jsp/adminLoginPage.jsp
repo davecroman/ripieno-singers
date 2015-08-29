@@ -22,21 +22,36 @@
           </div>
         </div>
 
-        <form>
+        <form action="login" method="post">
+          <div class="row">
+            <c:if test="${param.error != null}">
+                <p class="red-text text-lighten-3">
+                  Invalid username and password.
+                </p>
+              </c:if>
+              <c:if test="${param.logout != null}">
+                <p class="green-text text-lighten-3">
+                  You have been logged out.
+                </p>
+            </c:if>
+          </div>
           <div class="row">
             <div class="input-field col s12 white-text">
-              <input placeholder="username" id="first_name" type="text" class="validate">
-              <label for="username">Username</label>
+            <label for="username">Username</label>
+            <input placeholder="username" id="username" name="username" type="text">
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 white-text">
-              <input placeholder="password" id="last_name" type="password" class="validate">
               <label for="password">Password</label>
+              <input placeholder="password" id="password" name="password" type="password">
             </div>
           </div>
+          <input type="hidden"
+                    		name="${_csrf.parameterName}"
+                    		value="${_csrf.token}"/>
           <div class="row center">
-            <button class="ripieno-button" type="submit" name="action">
+            <button class="ripieno-button" type="submit">
               Login <i class="material-icons"></i>
             </button>
           </div>

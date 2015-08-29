@@ -7,10 +7,10 @@
    <div class="footer-copyright grey-text black">
      <div class="container center-align">
         <div class="hide-on-med-and-down">
-          This work is licensed under a <a target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a> | <a class="" href="/admin/login">Login as admin</a>
+          This work is licensed under a <a target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a> | <a class="" href="/login">Login as admin</a>
         </div>
         <div class="hide-on-large-only">
-          <a target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">License</a> | <a class="" href="/admin/login">Login as admin</a>
+          <a target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">License</a> | <a class="" href="/login">Login as admin</a>
         </div>
      </div>
    </div>

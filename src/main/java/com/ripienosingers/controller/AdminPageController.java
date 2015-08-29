@@ -9,7 +9,7 @@ import java.util.Map;
 @Controller
 public class AdminPageController {
 
-    @RequestMapping(value="/admin/login", method = RequestMethod.GET)
+    @RequestMapping(value="/login", method = RequestMethod.GET)
     public String goToAdminPage(Map<String, Object> map) {
         return "adminLoginPage";
     }
