@@ -1,0 +1,9 @@
+<sec:authorize access="!hasRole('ADMIN')">
+    <a href="/login">Login as Admin</a>
+</sec:authorize>
+<sec:authorize access="hasRole('ADMIN')">
+    <a href="javascript:document.getElementById('logout').submit()">Logout</a>
+</sec:authorize>
+<form id="logout" action="/logout" method="post" >
+  <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+</form>
