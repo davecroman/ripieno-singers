@@ -11,7 +11,7 @@
     <%@ include file="templates/header.jspf" %>
 
     <main>
-        <div class="center-align">
+        <div class="center-align animated fadeIn">
           <img src="/resources/png/logo_white.png" height="200px">
         </div>
         <div class="wrap">
