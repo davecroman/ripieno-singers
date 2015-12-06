@@ -10,60 +10,58 @@
     <%@ include file="templates/header.jspf" %>
 
     <main>
-        <div class="slider">
-            <ul class="slides">
-              <li>
-                <img src="/resources/slider/1.png">
-                <div class="caption left-align bottomized shadowed-text">
-                  <h4>With Sir Mark Carpio</h4>
-                  <h5 class="light white-text">The chorale with Sir Mark Carpio, the choir master of the world renowned Philippine Madrigal Singers</h5>
-                </div>
-              </li>
-
-              <li>
-                <img src="/resources/slider/2.png">
-                <div class="caption left-align bottomized shadowed-text">
-                  <h4>News To Go</h4>
-                  <h5 class="light white-text">The group with Ms. Kara David and Mr. Howie Severino of GMA News' News To Go after being featured and interviewed in their segment</h5>
-                </div>
-              </li>
-              <li>
-                  <img src="/resources/slider/3.png">
-                  <div class="caption left-align bottomized shadowed-text">
-                    <h4>With Ms. Jessica Soho</h4>
-                    <h5 class="light white-text">A photo opportunity with Ms. Jessica Soho featuring PUPLHS Chorale in Kapuso Mo, Jessica Soho.</h5>
-                  </div>
-              </li>
-              <li>
-                <img src="/resources/slider/4.png">
-                <div class="caption left-align bottomized shadowed-text">
-                  <h4>With Ms. Lani Misalucha</h4>
-                  <h5 class="light white-text">A photo taken with the Asia's Nightingale, Lani Misalucha, after shooting a clip for GMA News' show Follow That Star</h5>
-                </div>
-              </li>
-              <li>
-                  <img src="/resources/slider/5.png">
-                  <div class="caption right-align shadowed-text">
-                    <h4>Unang Hirit Guesting</h4>
-                    <h5 class="light white-text">Unang Hirit guesting of PUPLHS Chorale with its lovely hosts Lhar Santiago, Lyn Ching-Pascual, Arnold Clavio, and Rhea Santos</h5>
-                  </div>
-              </li>
-              <li>
-                <img src="/resources/slider/6.png">
-                <div class="caption left-align bottomized shadowed-text">
-                  <h4>Unang Hirit Guesting</h4>
-                  <h5 class="light white-text">After winning a Gold diploma and placing second in Mixed Youth Choir Category from the 1st Vietnam International Choir Festival and Competition held in Hoi An, Quang Nam, Vietnam</h5>
-                </div>
-              </li>
-            </ul>
+        <div class="center-align">
+          <img src="/resources/png/logo_white.png" height="200px">
         </div>
         <div class="wrap">
             <div class="left-column">
-                <sec:authorize access="hasRole('ADMIN')">
-                  <div class="subheader">
-                    You are an administrator
-                  </div>
-                </sec:authorize>
+                <div class="slider">
+                    <ul class="slides">
+                      <li>
+                        <img src="/resources/slider/1.png">
+                        <div class="caption left-align bottomized shadowed-text">
+                          <h5>With Sir Mark Carpio</h5>
+                          <p class="light white-text">The chorale with Sir Mark Carpio, the choir master of the world renowned Philippine Madrigal Singers</p>
+                        </div>
+                      </li>
+
+                      <li>
+                        <img src="/resources/slider/2.png">
+                        <div class="caption left-align bottomized shadowed-text">
+                          <h5>News To Go</h5>
+                          <p class="light white-text">The group with Ms. Kara David and Mr. Howie Severino of GMA News' News To Go after being featured and interviewed in their segment</p>
+                        </div>
+                      </li>
+                      <li>
+                          <img src="/resources/slider/3.png">
+                          <div class="caption left-align bottomized shadowed-text">
+                            <h5>With Ms. Jessica Soho</h5>
+                            <p class="light white-text">A photo opportunity with Ms. Jessica Soho featuring PUPLHS Chorale in Kapuso Mo, Jessica Soho.</p>
+                          </div>
+                      </li>
+                      <li>
+                        <img src="/resources/slider/4.png">
+                        <div class="caption left-align bottomized shadowed-text">
+                          <h5>With Ms. Lani Misalucha</h5>
+                          <p class="light white-text">A photo taken with the Asia's Nightingale, Lani Misalucha, after shooting a clip for GMA News' show Follow That Star</p>
+                        </div>
+                      </li>
+                      <li>
+                          <img src="/resources/slider/5.png">
+                          <div class="caption right-align shadowed-text">
+                            <h5>Unang Hirit Guesting</h5>
+                            <p class="light white-text">Unang Hirit guesting of PUPLHS Chorale with its lovely hosts Lhar Santiago, Lyn Ching-Pascual, Arnold Clavio, and Rhea Santos</p>
+                          </div>
+                      </li>
+                      <li>
+                        <img src="/resources/slider/6.png">
+                        <div class="caption left-align bottomized shadowed-text">
+                          <h5>Unang Hirit Guesting</h5>
+                          <p class="light white-text">After winning a Gold diploma and placing second in Mixed Youth Choir Category from the 1st Vietnam International Choir Festival and Competition held in Hoi An, Quang Nam, Vietnam</p>
+                        </div>
+                      </li>
+                    </ul>
+                </div>
                 <div class="subheader">
                     Services Offered
                 </div>
