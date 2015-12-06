@@ -1,5 +1,5 @@
 <header>
-    <div class="nav animated fadeInDown hide-on-small-only">
+    <div class="nav hide-on-small-only">
       <ul>
         <li>
             <div class="flex-display">
@@ -17,12 +17,13 @@
                 </a>
             </div>
         </li>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/comingsoon">About Us</a></li>
-        <li><a href="/comingsoon">News</a></li>
-        <li><a href="/comingsoon">Gallery</a></li>
-        <li><a href="/comingsoon">Members</a></li>
-        <li><a href="/comingsoon">Calendar</a></li>
+        <li><a href="/home">${requestScope['javax.servlet.forward.request_uri'] == '/home'? '<u style="color:white"><b>Home</b></u>' : 'Home'}</a></li>
+        <li><a href="/aboutUs">${requestScope['javax.servlet.forward.request_uri'] == '/aboutUs'? '<u style="color:white"><b>About Us</b></u>' : 'About Us'}</a></li>
+        <li><a href="/news">${requestScope['javax.servlet.forward.request_uri'] == '/news'? '<u style="color:white"><b>News</b></u>' : 'News'}</a></li>
+        <li><a href="/gallery">${requestScope['javax.servlet.forward.request_uri'] == '/gallery'? '<u style="color:white"><b>Gallery</b></u>' : 'Gallery'}</a></li>
+        <li><a href="/members">${requestScope['javax.servlet.forward.request_uri'] == '/members'? '<u style="color:white"><b>Members</b></u>' : 'Members'}</a></li>
+        <li><a href="/calendar">${requestScope['javax.servlet.forward.request_uri'] == '/calendar'? '<u style="color:white"><b>Calendar</b></u>' : 'Calendar'}</a></li>
+        <li><a href="/contactUs">${requestScope['javax.servlet.forward.request_uri'] == '/contactUs'? '<u style="color:white"><b>Contact Us</b></u>' : 'Contact Us'}</a></li>
       </ul>
     </div>
     <div class="nav animated fadeIn hide-on-med-and-up">

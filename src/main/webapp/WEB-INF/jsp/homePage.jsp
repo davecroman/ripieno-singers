@@ -3,6 +3,7 @@
 <!doctype html>
 <html>
 <head>
+    <title>The Ripieno Singers</title>
     <%@ include file="templates/head.jspf" %>
 </head>
 
