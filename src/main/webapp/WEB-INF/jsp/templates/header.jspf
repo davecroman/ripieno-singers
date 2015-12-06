@@ -33,11 +33,12 @@
       <div class="hide animated fadeIn" id="side-nav">
          <div class="collection">
             <a href="/home" class="collection-item black-text">Home</a>
-            <a href="/comingsoon" class="collection-item black-text">About</a>
-            <a href="/comingsoon" class="collection-item black-text">News</a>
-            <a href="/comingsoon" class="collection-item black-text">Gallery</a>
-            <a href="/comingsoon" class="collection-item black-text">Members</a>
-            <a href="/comingsoon" class="collection-item black-text">Calendar</a>
+            <a href="/aboutUs" class="collection-item black-text">About</a>
+            <a href="/news" class="collection-item black-text">News</a>
+            <a href="/gallery" class="collection-item black-text">Gallery</a>
+            <a href="/members" class="collection-item black-text">Members</a>
+            <a href="/calendar" class="collection-item black-text">Calendar</a>
+            <a href="/contactUs" class="collection-item black-text">Contact Us</a>
           </div>
       </div>
     </div>
