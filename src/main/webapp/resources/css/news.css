@@ -8,3 +8,9 @@
   padding: 10px;
   color: white;
 }
+
+.no-news-message {
+  background-color: #222222;
+  padding: 30px;
+  color: white;
+}

@@ -38,13 +38,13 @@
           <div class="row">
             <div class="input-field col s12 white-text">
             <label for="username">Username</label>
-            <input placeholder="username" id="username" name="username" type="text">
+            <input id="username" name="username" type="text">
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12 white-text">
               <label for="password">Password</label>
-              <input placeholder="password" id="password" name="password" type="password">
+              <input id="password" name="password" type="password">
             </div>
           </div>
           <input type="hidden"
