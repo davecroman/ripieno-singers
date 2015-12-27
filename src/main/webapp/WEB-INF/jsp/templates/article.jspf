@@ -1,0 +1,18 @@
+<h2 class="grey-text text-lighten-5 header">
+  <c:out value="${article.getTitle()}" />
+</h2>
+
+<p class="date">
+  <c:out value="${article.getFormattedDate()}" />
+</p>
+
+<sec:authorize access="hasRole('ADMIN')">
+  <div class="row center">
+    <button class="ripieno-button"> <i class="fa fa-pencil"></i> Modify</button>
+    <button class="ripieno-button"><i class="fa fa-trash"></i> Delete</button>
+  </div>
+</sec:authorize>
+
+<p class="news-content">
+  ${article.getContent()}
+</p>

@@ -42,4 +42,10 @@
           </div>
       </div>
     </div>
+
+    <sec:authorize access="hasRole('ADMIN')">
+      <div class="admin-indicator center">
+        You are viewing this page as an administrator
+      </div>
+    </sec:authorize>
 </header>

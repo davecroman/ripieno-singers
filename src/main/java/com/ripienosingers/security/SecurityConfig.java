@@ -24,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     .hasRole("ADMIN")
                 .and().formLogin()
                     .loginPage("/login")
-                    .defaultSuccessUrl("/admin/homepage")
+                    .defaultSuccessUrl("/home")
                     .permitAll()
                 .and()
                     .logout()

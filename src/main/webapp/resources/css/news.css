@@ -1,0 +1,10 @@
+.date {
+  text-align: center;
+  color: lightgray;
+}
+
+.news-content {
+  background-color: #222222;
+  padding: 10px;
+  color: white;
+}
