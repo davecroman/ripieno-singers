@@ -20,4 +20,5 @@
   background-color: brown;
   width: 100%;
   padding: 20px;
+  display: flex;
 }

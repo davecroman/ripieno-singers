@@ -45,7 +45,7 @@
             <h2 id="title-preview" class="grey-text text-lighten-5 header"></h2>
 
             <p class="date">
-              <i> Date of publication here </i>
+              ${date}
             </p>
 
             <p id="content-preview" class="news-content">
