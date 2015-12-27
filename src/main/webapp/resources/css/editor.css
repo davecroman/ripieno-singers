@@ -1,0 +1,13 @@
+#toolbar {
+  background-color: whitesmoke;
+  display: flex;
+}
+
+#editor {
+  background-color: white;
+}
+
+.toolbar-section {
+  margin-left: 10px;
+  margin-right: 10px;
+}

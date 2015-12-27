@@ -16,8 +16,10 @@
             <div class="animated fadeIn">
 
               <sec:authorize access="hasRole('ADMIN')">
-                <div class="row center">
-                  <button class="ripieno-button"> <i class="fa fa-plus"></i> Add an Article</button>
+                <div class="row center" style="margin:10px;">
+                  <a class="ripieno-button" href="/news/add">
+                    <i class="fa fa-plus"></i> Add an Article
+                  </a>
                 </div>
               </sec:authorize>
 

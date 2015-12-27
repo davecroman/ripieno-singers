@@ -12,7 +12,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("user").password("password").roles("ADMIN");
+                .withUser("ripienosingers").password("puplhschorale").roles("ADMIN");
     }
 
     @Override
@@ -20,7 +20,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                 .and()
                     .authorizeRequests()
-                .antMatchers("/admin/**")
+                .antMatchers("/admin/**", "/news/add", "/news/*/confirmDelete", "/news/*/delete")
                     .hasRole("ADMIN")
                 .and().formLogin()
                     .loginPage("/login")

@@ -1,0 +1,44 @@
+<!-- Create the toolbar container -->
+<div id="toolbar">
+  <div class="toolbar-section">
+    <select class="ql-size">
+      <option value="10px">Small</option>
+      <option value="13px" selected>Normal</option>
+      <option value="18px">Large</option>
+      <option value="32px">Huge</option>
+    </select>
+  </div>
+
+  <div class="toolbar-section">
+    <span title="Bold" class="ql-format-button ql-bold"></span>
+    <span class="ql-format-separator"></span>
+    <span title="Italic" class="ql-format-button ql-italic"></span>
+    <span class="ql-format-separator"></span>
+    <span title="Underline" class="ql-format-button ql-underline"></span>
+    <span class="ql-format-separator"></span>
+    <span title="Strikethrough" class="ql-format-button ql-strike"></span>
+  </div>
+
+  <div class="toolbar-section">
+    <span class="ql-format-group">
+      <span title="List" class="ql-format-button ql-list"></span>
+      <span class="ql-format-separator"></span>
+      <span title="Bullet" class="ql-format-button ql-bullet"></span>
+      <span class="ql-format-separator"></span>
+    </span>
+  </div>
+</div>
+
+<!-- Create the editor container -->
+<div id="editor">
+  <div>Start writing <b>here</b>!</div>
+  <div><br></div>
+</div>
+
+<!-- Initialize Quill editor -->
+<script>
+  var editor = new Quill('#editor', {
+    theme: 'snow'
+  });
+  editor.addModule('toolbar', { container: '#toolbar' });
+</script>

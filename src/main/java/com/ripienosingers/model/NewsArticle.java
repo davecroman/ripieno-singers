@@ -3,9 +3,9 @@ package com.ripienosingers.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class NewsArticle {
+public class NewsArticle implements Comparable<NewsArticle>{
 
-    private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MMMM d, Y");
+    public static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("MMMM d, Y");
 
     private String id;
 
@@ -33,5 +33,10 @@ public class NewsArticle {
 
     public String getFormattedDate() {
         return DATE_FORMAT.format(datepublished);
+    }
+
+    @Override
+    public int compareTo(NewsArticle article) {
+        return this.datepublished.compareTo(article.getDatePublished());
     }
 }

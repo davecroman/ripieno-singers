@@ -10,11 +10,11 @@
 
 <sec:authorize access="hasRole('ADMIN')">
   <div class="row center">
-    <button class="ripieno-button"> <i class="fa fa-pencil"></i> Modify</button>
-    <button class="ripieno-button"><i class="fa fa-trash"></i> Delete</button>
+    <a class="ripieno-button"> <i class="fa fa-pencil"></i> Modify</a>
+    <a class="ripieno-button" href="/news/${article.getId()}/confirmDelete"><i class="fa fa-trash"></i> Delete</a>
   </div>
 </sec:authorize>
 
-<p class="news-content">
+<div class="news-content">
   ${article.getContent()}
-</p>
+</div>

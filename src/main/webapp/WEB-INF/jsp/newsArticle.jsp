@@ -14,6 +14,15 @@
     <main>
         <div class="wrap">
             <div class="animated fadeIn">
+              <sec:authorize access="hasRole('ADMIN')">
+                <c:if test = "${type == 'confirmDeletion'}">
+                  <div class="row center warning-message text-block">
+                     Are you sure you want to delete this article?
+                    <a href="/news/${article.getId()}/delete" class="ripieno-button">Yes </a>
+                    <a href="/news" class="ripieno-button">Go back to News </a>
+                  </div>
+                </c:if>
+              </sec:authorize>
               <%@ include file="templates/article.jspf" %>
             </div>
         </div>
