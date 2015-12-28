@@ -14,7 +14,8 @@
     <main>
         <div class="wrap">
 
-            <div class="animated fadeIn">
+            <div class="animated fadeIn expand">
+              <%@ include file="templates/notifications.jspf" %>
 
               <sec:authorize access="hasRole('ADMIN')">
                 <c:if test = "${type == 'confirmDeletion'}">

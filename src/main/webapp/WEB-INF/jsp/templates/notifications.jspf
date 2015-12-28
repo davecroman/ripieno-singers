@@ -1,0 +1,11 @@
+<c:if test="${not empty notifications}">
+  <c:set var="notificationCount" value="0" scope="page" />
+  <c:forEach items="${notifications}" var="notificationMessage">
+    <c:set var="notificationCount" value="${notificationCount+1}" scope="page" />
+    <c:set var="notificationId" value="${'notification'.concat(notificationCount)}" scope="page" />
+    <div id="${notificationId}" style="color: white; background-color: darkgreen; padding: 10px; display: flex; margin-bottom: 5px;">
+      <div style="width: 100%; padding: 5px;"> ${notificationMessage} </div>
+      <div style="width: 100%; text-align: right;"> <a class="fa fa-times fa-2x" onclick="$('#${notificationId}').addClass('hide')"></a> </div>
+    </div>
+  </c:forEach>
+</c:if>

@@ -15,8 +15,10 @@
         <div class="wrap">
             <div class="animated fadeIn">
 
+              <%@ include file="templates/notifications.jspf" %>
+
               <sec:authorize access="hasRole('ADMIN')">
-                <div class="row center" style="margin:10px;">
+                <div class="row center" style="margin:10px;text-align:right;margin-top:20px;">
                   <a class="ripieno-button" href="/news/editor">
                     <i class="fa fa-plus"></i> Add an Article
                   </a>

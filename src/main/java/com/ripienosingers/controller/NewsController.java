@@ -59,14 +59,19 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/news/{articleId}/delete", method = RequestMethod.GET)
-    public String deleteArticle(@PathVariable String articleId) {
+    public String deleteArticle(@PathVariable String articleId, RedirectAttributes redirAttr) {
         String basicAuth = "Basic " + Base64.encodeBase64String("key-3:RKXOb-Lt9AHHwg3bPrl0".getBytes());
+
+        List<String> notifications = new ArrayList<>();
 
         try {
             newsService.deleteArticle(basicAuth, articleId).execute();
+            notifications.add("Your article has been successfully deleted");
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        redirAttr.addFlashAttribute("notifications", notifications);
 
         return "redirect:/news";
     }
@@ -84,16 +89,22 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/news/{articleId}/modify", method = RequestMethod.POST)
-    public String modifyArticle(@PathVariable String articleId, @RequestParam String title, @RequestParam String content) {
+    public String modifyArticle(@PathVariable String articleId, @RequestParam String title,
+                                @RequestParam String content, RedirectAttributes redirAttr) {
         JsonObject body = new JsonObject();
         body.addProperty("title", title);
         body.addProperty("content", content);
 
+        List<String> notifications = new ArrayList<>();
+
         try {
             newsService.modifyArticle(basicAuth, articleId, body).execute();
+            notifications.add("Your article has been successfully updated");
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        redirAttr.addFlashAttribute("notifications", notifications);
 
         return "redirect:/news/" + articleId;
     }
@@ -110,20 +121,24 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/news/publish", method = RequestMethod.POST)
-    public String publishArticle(@RequestParam String title, @RequestParam String content, Map<String, Object> map) {
+    public String publishArticle(@RequestParam String title, @RequestParam String content,
+                                 Map<String, Object> map, RedirectAttributes redirAttr) {
         JsonObject body = new JsonObject();
         body.addProperty("title", title);
         body.addProperty("content", content);
         body.addProperty("datepublished", NewsArticle.DATE_FORMAT.format(new Date()));
 
         Call<NewsArticle> publishArticleCall = newsService.publishArticle(basicAuth, body);
+        List<String> notifications = new ArrayList<>();
 
         try {
             NewsArticle result = publishArticleCall.execute().body();
+            notifications.add("Your article has been successfully published!");
         } catch (IOException e) {
             e.printStackTrace();
         }
 
+        redirAttr.addFlashAttribute("notifications", notifications);
         return "redirect:/news";
     }
 
