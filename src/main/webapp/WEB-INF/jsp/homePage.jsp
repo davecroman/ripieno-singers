@@ -5,6 +5,10 @@
 <head>
     <title>The Ripieno Singers</title>
     <%@ include file="templates/head.jspf" %>
+
+    <meta property="og:title" content="The Ripieno Singers" />
+    <meta property="og:description" content="The Official Website of The Ripieno Singers" />
+    <meta property="og:image" content="https://ripienosingers.herokuapp.com/resources/jpg/welcomebg.jpg" />
 </head>
 
 <body>
