@@ -6,6 +6,7 @@
     <title>${article.getTitle()}</title>
     <%@ include file="templates/head.jspf" %>
     <link rel="stylesheet" href="/resources/css/news.css" type="text/css"/>
+
 </head>
 
 <body>
@@ -28,6 +29,7 @@
               </sec:authorize>
 
               <%@ include file="templates/article.jspf" %>
+              <%@ include file="templates/share.jspf" %>
             </div>
 
         </div>

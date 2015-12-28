@@ -1,0 +1,9 @@
+<div style="text-align:center;">
+  <share-button class="share-button-custom">
+</share-button></div>
+
+<script src="/resources/js/share-button.js"></script>
+
+<script>
+  var shareButton = new ShareButton();
+</script>

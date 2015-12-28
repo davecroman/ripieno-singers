@@ -29,6 +29,7 @@
                   <c:when test="${not empty articles}">
                       <c:forEach items="${articles}" var="article">
                         <%@ include file="templates/article.jspf" %>
+                        <div><a href="/news/${article.getId()}" class="ripieno-button" style="display:block;"> Read full article </a></div>
                       </c:forEach>
                   </c:when>
                   <c:otherwise>
