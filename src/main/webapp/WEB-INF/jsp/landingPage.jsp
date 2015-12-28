@@ -8,6 +8,8 @@
     <meta property="og:title" content="The Ripieno Singers" />
     <meta property="og:description" content="The Official Website of The Ripieno Singers" />
     <meta property="og:image" content="https://ripienosingers.herokuapp.com/resources/jpg/welcomebg.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="fb:app_id" content="1659655334305089" />
 
     <title>The Ripieno Singers</title>
 
