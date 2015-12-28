@@ -19,7 +19,14 @@
         <div class="wrap">
           <div id="article-form" style="width:100%;height:100%;">
               <h2 class="grey-text text-lighten-5 header">
-                  Add an Article
+                  <c:choose>
+                    <c:when test="${actionType == 'add'}">
+                      Add an Article
+                    </c:when>
+                    <c:otherwise>
+                      Modify Article
+                    </c:otherwise>
+                  </c:choose>
               </h2>
 
               <div class="row">
@@ -56,7 +63,9 @@
               <input type="hidden" id="content" name="content">
               <div class="row center">
                 <button class="ripieno-button" type="button" onclick="onBack()">Back</button>
-                <button class="ripieno-button" type="submit">Publish</button>
+                <button class="ripieno-button" type="submit">
+                  ${actionType == 'add'? 'Publish' : 'Update'}
+                </button>
               </div>
             </form>
           </div>

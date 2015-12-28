@@ -15,10 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import retrofit.*;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Controller
 public class NewsController {
@@ -109,7 +106,7 @@ public class NewsController {
         }
 
         map.put("date", NewsArticle.DATE_FORMAT.format(new Date()));
-        return "newsAdd";
+        return "newsEditor";
     }
 
     @RequestMapping(value = "/news/publish", method = RequestMethod.POST)
@@ -147,7 +144,7 @@ public class NewsController {
     private List<NewsArticle> getArticles() {
         Call<List<NewsArticle>> listCall = newsService.listArticles();
 
-        List<NewsArticle> articles = null;
+        List<NewsArticle> articles = new ArrayList<>();
 
         try {
             articles = listCall.execute().body();

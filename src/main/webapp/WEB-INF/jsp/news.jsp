@@ -31,7 +31,7 @@
                   </c:when>
                   <c:otherwise>
                       <div class="no-news-message">
-                        There are currently no news articles to show. Please try again later.
+                        There are currently no news articles to show. The service may be down. Please try refreshing the page.
                       </div>
                   </c:otherwise>
               </c:choose>
