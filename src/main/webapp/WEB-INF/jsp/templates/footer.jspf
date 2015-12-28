@@ -7,7 +7,7 @@
    <div class="footer-copyright grey-text black">
      <div class="container center-align">
         <div class="hide-on-med-and-down">
-          This work is licensed under a <a target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a> | <%@ include file="loginBlock.jspf" %>
+          <i class="fa fa-copyright"></i> The Ripieno Singers Inc.</a> | <%@ include file="loginBlock.jspf" %>
         </div>
         <div class="hide-on-large-only">
           <a target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">License</a> | <%@ include file="loginBlock.jspf" %>
