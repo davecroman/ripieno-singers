@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import retrofit.*;
 
 import java.io.IOException;
@@ -73,8 +74,39 @@ public class NewsController {
         return "redirect:/news";
     }
 
-    @RequestMapping(value = "/news/add", method = RequestMethod.GET)
-    public String addNewArticle(Map<String, Object> map) {
+    @RequestMapping(value = "/news/{articleId}/editor", method = RequestMethod.GET)
+    public String articleEditor(@PathVariable String articleId, RedirectAttributes redirAttr) {
+        NewsArticle newsArticle = getNewsArticle(articleId);
+
+        redirAttr.addFlashAttribute("actionType", "modify");
+        redirAttr.addFlashAttribute("articleId", articleId);
+        redirAttr.addFlashAttribute("title", newsArticle.getTitle());
+        redirAttr.addFlashAttribute("content", newsArticle.getContent());
+
+        return "redirect:/news/editor";
+    }
+
+    @RequestMapping(value = "/news/{articleId}/modify", method = RequestMethod.POST)
+    public String modifyArticle(@PathVariable String articleId, @RequestParam String title, @RequestParam String content) {
+        JsonObject body = new JsonObject();
+        body.addProperty("title", title);
+        body.addProperty("content", content);
+
+        try {
+            newsService.modifyArticle(basicAuth, articleId, body).execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "redirect:/news/" + articleId;
+    }
+
+    @RequestMapping(value = "/news/editor", method = RequestMethod.GET)
+    public String newsEditor(Map<String, Object> map) {
+
+        if (!map.containsKey("actionType")) {
+            map.put("actionType", "add");
+        }
 
         map.put("date", NewsArticle.DATE_FORMAT.format(new Date()));
         return "newsAdd";
@@ -82,7 +114,6 @@ public class NewsController {
 
     @RequestMapping(value = "/news/publish", method = RequestMethod.POST)
     public String publishArticle(@RequestParam String title, @RequestParam String content, Map<String, Object> map) {
-
         JsonObject body = new JsonObject();
         body.addProperty("title", title);
         body.addProperty("content", content);

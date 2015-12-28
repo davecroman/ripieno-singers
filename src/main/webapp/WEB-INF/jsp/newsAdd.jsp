@@ -18,18 +18,20 @@
     <main>
         <div class="wrap">
           <div id="article-form" style="width:100%;height:100%;">
-            <h2 class="grey-text text-lighten-5 header">
-                Add an Article
-            </h2>
+              <h2 class="grey-text text-lighten-5 header">
+                  Add an Article
+              </h2>
 
               <div class="row">
                 <div class="input-field col s12 white-text">
                 <label for="titleInput">Title</label>
-                <input id="titleInput" type="text" required>
+                <input id="titleInput" type="text" value="${title}" required>
                 </div>
               </div>
 
-              <%@ include file="templates/texteditor.jspf" %>
+              <div class="row">
+                <%@ include file="templates/texteditor.jspf" %>
+              </div>
 
               <div class="row center">
                 <button class="ripieno-button" type="button" onclick="onFinish()">
@@ -44,25 +46,21 @@
           <div id="article-preview" class="hide" style="width:100%">
             <h2 id="title-preview" class="grey-text text-lighten-5 header"></h2>
 
-            <p class="date">
-              ${date}
-            </p>
+            <p class="date">${date}</p>
 
-            <p id="content-preview" class="news-content">
+            <p id="content-preview" class="news-content"></p>
 
-            </p>
-
-            <form action="/news/publish" method="post">
+            <form action="${actionType == 'add'? '/news/publish' : '/news/'.concat(articleId).concat('/modify') }" method="post">
               <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-              <input id="title" name="title" type="hidden">
-              <input id="content" name="content" type="hidden">
+              <input type="hidden" id="title" name="title">
+              <input type="hidden" id="content" name="content">
               <div class="row center">
                 <button class="ripieno-button" type="button" onclick="onBack()">Back</button>
                 <button class="ripieno-button" type="submit">Publish</button>
               </div>
-
             </form>
           </div>
+
         </div>
     </main>
 

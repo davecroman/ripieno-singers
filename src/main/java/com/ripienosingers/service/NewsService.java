@@ -21,4 +21,7 @@ public interface NewsService {
 
     @DELETE("news/{id}")
     Call<String> deleteArticle(@Header("Authorization") String authorization, @Path("id") String id);
+
+    @PATCH("news/{id}")
+    Call<NewsArticle> modifyArticle(@Header("Authorization") String authorization, @Path("id") String id, @Body JsonObject body);
 }

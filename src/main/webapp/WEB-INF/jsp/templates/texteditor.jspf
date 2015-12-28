@@ -31,8 +31,16 @@
 
 <!-- Create the editor container -->
 <div id="editor">
-  <div>Start writing <b>here</b>!</div>
-  <div><br></div>
+  <c:choose>
+      <c:when test="${not empty content}">
+        ${content}
+      </c:when>
+      <c:otherwise>
+        <div>Start writing <b>here</b>!</div>
+        <div><br></div>
+      </c:otherwise>
+  </c:choose>
+
 </div>
 
 <!-- Initialize Quill editor -->

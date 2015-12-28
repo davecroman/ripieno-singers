@@ -10,7 +10,7 @@
 
 <sec:authorize access="hasRole('ADMIN')">
   <div class="row center">
-    <a class="ripieno-button"> <i class="fa fa-pencil"></i> Modify</a>
+    <a class="ripieno-button" href="/news/${article.getId()}/editor"> <i class="fa fa-pencil"></i> Modify</a>
     <a class="ripieno-button" href="/news/${article.getId()}/confirmDelete"><i class="fa fa-trash"></i> Delete</a>
   </div>
 </sec:authorize>
