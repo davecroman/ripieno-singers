@@ -98,17 +98,17 @@
     </main>
 
     <%@ include file="templates/footer.jspf" %>
+
+    <script>
+        (function($){
+          $(function(){
+           $('.slider').slider();
+          }); // end of document ready
+        })(jQuery); // end of jQuery name space
+    </script>
+
+    <%@ include file="templates/script.jspf" %>
 </body>
-
-<script>
-    (function($){
-      $(function(){
-       $('.slider').slider();
-      }); // end of document ready
-    })(jQuery); // end of jQuery name space
-</script>
-
-<%@ include file="templates/script.jspf" %>
 
 </html>
 

@@ -6,7 +6,7 @@
     <title>${article.getTitle()}</title>
     <%@ include file="templates/head.jspf" %>
     <link rel="stylesheet" href="/resources/css/news.css" type="text/css"/>
-
+    <link rel="stylesheet" href="/resources/css/share-button.min.css" type="text/css"/>
 </head>
 
 <body>
