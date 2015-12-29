@@ -32,8 +32,10 @@
                     </h3>
                </div>
                <div class="grey-text text-lighten-5 text-block">
-                    <div><p> <i class="fa fa-mobile fa-1x white-font"></i> +63 2 897 1177 </p></div>
-                    <div><p> <i class="fa fa-mobile fa-1x white-font"></i> +63 2 714-9618 </p></div>
+                    <div><i class="fa fa-phone"></i> 714-9618</div>
+                    <div><p> <i class="fa fa-mobile fa-1x white-font"></i> 0917-8515543 </p></div>
+                    <div><p> <i class="fa fa-mobile fa-1x white-font"></i> 0977-387-6907 </p></div>
+                    <div><p> <i class="fa fa-mobile fa-1x white-font"></i> 0932-538-1826 </p></div>
                </div>
                <div class="grey-text text-lighten-5">
                    <h3 class="grey-text text-lighten-5">
