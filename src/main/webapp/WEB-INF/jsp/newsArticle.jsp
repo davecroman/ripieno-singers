@@ -22,8 +22,8 @@
                 <c:if test = "${type == 'confirmDeletion'}">
                   <div class="row center warning-message text-block">
                     <div> Are you sure you want to delete this article? </div>
-                    <div> <a href="/news/${article.getId()}/delete" class="ripieno-button"> Yes </a> </div>
-                    <div> <a href="/news" class="ripieno-button"> Go back to News </a> </div>
+                    <div> <a href="/news/${article.getId()}/delete" class="ripieno-button"> YES </a> </div>
+                    <div> <a href="/news" class="ripieno-button"> BACK </a> </div>
                   </div>
                 </c:if>
               </sec:authorize>
