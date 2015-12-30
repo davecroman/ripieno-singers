@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.logging.HttpLoggingInterceptor;
 import org.apache.commons.codec.binary.Base64;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import retrofit.GsonConverterFactory;
@@ -14,7 +15,7 @@ import retrofit.Retrofit;
 public class BeanProviderService {
 
     @Bean
-    public NewsService newsService(){
+    public Retrofit retrofit(){
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-M-dd")
                 .create();
@@ -30,13 +31,26 @@ public class BeanProviderService {
                 .client(httpClient)
                 .build();
 
+        return retrofit;
+    }
+
+    @Bean
+    @Autowired
+    public NewsService newsService(Retrofit retrofit) {
         return retrofit.create(NewsService.class);
     }
 
+    @Bean
+    @Autowired
+    public ContactsService contactsService(Retrofit retrofit) {
+        return retrofit.create(ContactsService.class);
+    }
+
     @Bean(name = "authorizationKey")
-    public String authorizationKey(){
+    public String authorizationKey() {
         String basicAuth = "Basic " + Base64.encodeBase64String("key-3:RKXOb-Lt9AHHwg3bPrl0".getBytes());
 
         return basicAuth;
     }
+
 }

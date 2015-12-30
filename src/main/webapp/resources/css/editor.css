@@ -1,10 +1,11 @@
 #toolbar {
-  background-color: whitesmoke;
+  background-color: #DDDDDD;
   display: flex;
 }
 
 #editor {
   background-color: white;
+  min-height: 250px;
 }
 
 .toolbar-section {
