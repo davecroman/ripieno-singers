@@ -37,6 +37,7 @@ public class ContactUsController {
     public String goToContactsPage(Map<String, Object> map) {
 
         Call<List<BasicSection>> listCall = contactsService.listSections();
+        List<String> notifications = new ArrayList<>();
 
         try {
             Map<Integer, BasicSection> sections = asMap(listCall.execute().body());
@@ -46,7 +47,10 @@ public class ContactUsController {
             map.put("visit", sections.get(VISIT_ID));
         } catch (IOException e) {
             e.printStackTrace();
+            notifications.add("Oops! There was a problem retrieving the data for this page. Try again later");
         }
+
+        map.put("notifications", notifications);
 
         return "contactUs";
     }
