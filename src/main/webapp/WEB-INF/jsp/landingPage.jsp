@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="The Official Website of The Ripieno Singers Inc. We perform and entertain in various forms and styles of singing: classical, pop, ballad, folk and more in plentiful events and occasions such as weddings, seminars, conferences, concerts, workshops, birthdays and wakes as well. " />
-
+    <meta name="google-site-verification" content="cBXIsWG0vhyyiyczVdBHt4JMlupNobtQMxkJS68K3Io" />
     <meta property="og:title" content="The Ripieno Singers" />
     <meta property="og:description" content="The Official Website of The Ripieno Singers Inc. We perform and entertain in various forms and styles of singing: classical, pop, ballad, folk and more in plentiful events and occasions such as weddings, seminars, conferences, concerts, workshops, birthdays and wakes as well. " />
     <meta property="og:image" content="https://ripienosingers.herokuapp.com/resources/jpg/welcomebg.jpg" />
