@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>The Ripieno Singers - News</title>
-    <meta property="description" content="Get in touch with all the recent gigs and adventures of The Ripieno Singers Inc." />
+    <meta name="description" content="Get in touch with all the recent gigs and adventures of The Ripieno Singers Inc." />
 
     <%@ include file="templates/head.jspf" %>
     <link rel="stylesheet" href="/resources/css/news.css" type="text/css"/>

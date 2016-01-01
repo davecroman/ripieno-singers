@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>The Ripieno Singers - Contact Us</title>
-    <meta property="description" content="Contact Details of The Ripieno Singers Inc. Details available for location, phone, and email." />
+    <meta name="description" content="Contact Details of The Ripieno Singers Inc. Details available for location, phone, and email." />
     <%@ include file="templates/head.jspf" %>
 </head>
 
