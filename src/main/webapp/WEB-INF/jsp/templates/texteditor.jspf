@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="//cdn.quilljs.com/0.20.1/quill.snow.css" />
+<script src="//cdn.quilljs.com/0.20.1/quill.js"></script>
+
 <!-- Create the toolbar container -->
 <div id="toolbar">
   <div class="toolbar-section">

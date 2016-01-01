@@ -93,7 +93,8 @@ main {
 
 .wrap {
     margin: 10px auto;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     max-width: 1000px;
     display: flex;
     justify-content: center;
@@ -113,19 +114,88 @@ main {
     width: 100%;
 }
 
+/* ========== POPUP =============== */
+
+.popup-bg {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0,0,0,0.85);
+  z-index: 1100;
+  margin: auto;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  max-width: 90%;
+}
+
+@media screen and (max-width: 650px) {
+
+  .popup-container {
+    width:90%;
+  }
+}
+
+/* ========== TEXT EDITOR =============== */
+
+#toolbar {
+  background-color: #DDDDDD;
+  display: flex;
+}
+
+#editor {
+  background-color: white;
+  min-height: 250px;
+}
+
+.toolbar-section {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 /* ======= BUTTONS ======= */
 
 .ripieno-button {
     background-color: #222222;
     border: 2px solid #cccccc;
-    margin: 10px;
     color: white;
     transition: .3s background-color;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 3px;
     padding: 10px;
-    min-width: 200px;
+    min-width: 100px;
+}
+
+.ripieno-button2 {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Roboto", sans-serif;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: auto;
+    background: transparent;
+    border: 0;
+    color: rgba(255,255,255,0.8);
+}
+
+.ripieno-button2:hover {
+   color: white;
 }
 
 .ripieno-button:hover {
@@ -142,6 +212,15 @@ main {
 
 /* ======= ADMIN ======= */
 
+.white-popup {
+  position: relative;
+  background: #FFF;
+  padding: 20px;
+  width: auto;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
 .admin-indicator {
   color: white;
   background-color: slategrey;
@@ -151,20 +230,17 @@ main {
 @media screen and (min-width: 600px) {
 
     .left-column {
-        width: 50%;
-        float: left;
+        width: 100%;
     }
 
     .right-column {
-        width: 50%;
-        float: right;
+        width: 100%;
     }
 
     .wrap {
         margin: 10px auto;
         padding: 10px;
         max-width: 1000px;
-        display: flex;
         justify-content: center;
         flex-direction: row;
     }

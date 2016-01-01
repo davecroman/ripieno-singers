@@ -5,11 +5,7 @@
 <head>
     <title>Add an Article</title>
     <%@ include file="templates/head.jspf" %>
-    <link rel="stylesheet" href="/resources/css/editor.css" type="text/css"/>
-    <link rel="stylesheet" href="//cdn.quilljs.com/0.20.1/quill.snow.css" />
     <link rel="stylesheet" href="/resources/css/news.css" type="text/css"/>
-
-    <script src="//cdn.quilljs.com/0.20.1/quill.js"></script>
 </head>
 
 <body>
