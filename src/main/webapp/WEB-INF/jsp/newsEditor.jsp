@@ -12,6 +12,11 @@
     <%@ include file="templates/header.jspf" %>
 
     <main>
+        <c:if test="${not empty notifications}">
+           <div class="wrap" style="width:100%;display:block;">
+            <%@ include file="templates/notifications.jspf" %>
+           </div>
+         </c:if>
         <div class="wrap">
           <div id="article-form" style="width:100%;height:100%;">
               <h2 class="grey-text text-lighten-5 header">

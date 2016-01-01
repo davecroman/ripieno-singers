@@ -29,10 +29,18 @@ public class NewsController {
 
     @RequestMapping(value = "/news", method = RequestMethod.GET)
     public String goToNewsPage(Map<String, Object> map) {
-        List<NewsArticle> articles = getArticles();
 
-        Collections.reverse(articles);
-        map.put("articles", articles);
+        List<String> notifications = new ArrayList<>();
+
+        try {
+            List<NewsArticle> articles = getArticles();
+            Collections.reverse(articles);
+            map.put("articles", articles);
+        } catch (Exception ex) {
+            notifications.add("Oops! We couldn't gather data from the news service. Please try again later");
+        }
+
+        map.put("notifications", notifications);
 
         return "news";
     }
@@ -40,20 +48,38 @@ public class NewsController {
     @RequestMapping(value = "/news/{articleId}", method = RequestMethod.GET)
     public String goToNewsArticle(@PathVariable String articleId, Map<String, Object> map) {
 
-        NewsArticle newsArticle = getNewsArticle(articleId);
+        NewsArticle newsArticle = null;
+        List<String> notifications = new ArrayList<>();
+
+        try {
+            newsArticle = getNewsArticle(articleId);
+        } catch (IOException e) {
+            notifications.add("Oops! We couldn't retrieve data for this news article. Please try again later");
+            e.printStackTrace();
+        }
 
         map.put("article", newsArticle);
         map.put("type", "normal");
+        map.put("notifications", notifications);
 
         return "newsArticle";
     }
 
     @RequestMapping(value = "/news/{articleId}/confirmDelete", method = RequestMethod.GET)
     public String confirmDeleteArticle(@PathVariable String articleId, Map<String, Object> map) {
-        NewsArticle newsArticle = getNewsArticle(articleId);
+        NewsArticle newsArticle = null;
+        List<String> notifications = new ArrayList<>();
+
+        try {
+            newsArticle = getNewsArticle(articleId);
+        } catch (IOException e) {
+            notifications.add("Oops! We couldn't retrieve data for this news article. Please try again later");
+            e.printStackTrace();
+        }
 
         map.put("article", newsArticle);
         map.put("type", "confirmDeletion");
+        map.put("notifications", notifications);
 
         return "newsArticle";
     }
@@ -68,6 +94,7 @@ public class NewsController {
             newsService.deleteArticle(basicAuth, articleId).execute();
             notifications.add("Your article has been successfully deleted");
         } catch (IOException e) {
+            notifications.add("Oops! A problem occurred while trying to delete this article. Try again later");
             e.printStackTrace();
         }
 
@@ -78,12 +105,21 @@ public class NewsController {
 
     @RequestMapping(value = "/news/{articleId}/editor", method = RequestMethod.GET)
     public String articleEditor(@PathVariable String articleId, RedirectAttributes redirAttr) {
-        NewsArticle newsArticle = getNewsArticle(articleId);
+        NewsArticle newsArticle = null;
+        List<String> notifications = new ArrayList<>();
+
+        try {
+            newsArticle = getNewsArticle(articleId);
+            redirAttr.addFlashAttribute("title", newsArticle.getTitle());
+            redirAttr.addFlashAttribute("content", newsArticle.getContent());
+        } catch (IOException e) {
+            notifications.add("Oops! We couldn't retrieve data for this news article. Please try again later");
+            e.printStackTrace();
+        }
 
         redirAttr.addFlashAttribute("actionType", "modify");
         redirAttr.addFlashAttribute("articleId", articleId);
-        redirAttr.addFlashAttribute("title", newsArticle.getTitle());
-        redirAttr.addFlashAttribute("content", newsArticle.getContent());
+        redirAttr.addFlashAttribute("notifications", notifications);
 
         return "redirect:/news/editor";
     }
@@ -101,7 +137,10 @@ public class NewsController {
             newsService.modifyArticle(basicAuth, articleId, body).execute();
             notifications.add("Your article has been successfully updated");
         } catch (IOException e) {
+            notifications.add("Oops! A problem occurred while updating the article. Try again later");
+            redirAttr.addFlashAttribute("notifications", notifications);
             e.printStackTrace();
+            return "redirect:/news/";
         }
 
         redirAttr.addFlashAttribute("notifications", notifications);
@@ -136,38 +175,26 @@ public class NewsController {
             notifications.add("Your article has been successfully published!");
         } catch (IOException e) {
             e.printStackTrace();
+            notifications.add("Oops! Sorry, a problem occured while publishing your article. Do you have a backup? Please try again.");
         }
 
         redirAttr.addFlashAttribute("notifications", notifications);
         return "redirect:/news";
     }
 
-    private NewsArticle getNewsArticle(String articleId) {
+    private NewsArticle getNewsArticle(String articleId) throws IOException {
         Call<NewsArticle> articleCall = newsService.getArticle(articleId);
-
-        NewsArticle newsArticle = null;
-
-        try {
-            newsArticle = articleCall.execute().body();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        NewsArticle newsArticle =  articleCall.execute().body();
         return newsArticle;
     }
 
 
-    private List<NewsArticle> getArticles() {
+    private List<NewsArticle> getArticles() throws IOException {
         Call<List<NewsArticle>> listCall = newsService.listArticles();
 
         List<NewsArticle> articles = new ArrayList<>();
 
-        try {
-            articles = listCall.execute().body();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return articles;
+        return listCall.execute().body();
     }
 
 }

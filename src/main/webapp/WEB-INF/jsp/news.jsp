@@ -25,18 +25,11 @@
                 </div>
               </sec:authorize>
 
-              <c:choose>
-                  <c:when test="${not empty articles}">
-                      <c:forEach items="${articles}" var="article">
-                        <%@ include file="templates/article.jspf" %>
-                      </c:forEach>
-                  </c:when>
-                  <c:otherwise>
-                      <div class="no-news-message">
-                        There are currently no news articles to show. The service may be down. Please try refreshing the page.
-                      </div>
-                  </c:otherwise>
-              </c:choose>
+              <c:if test="${not empty articles}">
+                  <c:forEach items="${articles}" var="article">
+                    <%@ include file="templates/article.jspf" %>
+                  </c:forEach>
+              </c:if>
             </div>
         </div>
     </main>
