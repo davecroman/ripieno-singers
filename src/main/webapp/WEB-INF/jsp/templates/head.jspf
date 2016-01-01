@@ -3,6 +3,7 @@
 <meta property="fb:app_id" content="1659655334305089" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://ripienosingers.herokuapp.com/resources/jpg/welcomebg.jpg" />
+<meta name="author" content="The Ripieno Singers Inc.">
 
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="/resources/css/navigator.css" type="text/css"/>

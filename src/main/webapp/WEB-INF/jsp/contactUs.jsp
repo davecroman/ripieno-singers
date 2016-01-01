@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>The Ripieno Singers - Contact Us</title>
+    <meta property="description" content="Contact Details of The Ripieno Singers Inc. Details available for location, phone, and email." />
     <%@ include file="templates/head.jspf" %>
 </head>
 
@@ -46,7 +47,7 @@
                 <sec:authorize access="hasRole('ADMIN')">
                      <div style="width: 100%;margin: auto;">
                        <a class="ripieno-button" style="float: right;" href="#" onclick="editSection('${visit.getSectionName()}', $('#visitSection'), ${visit.getId()});">
-                           Edit
+                           <i class="fa fa-pencil"></i> Edit
                        </a>
                      </div>
                  </sec:authorize>
@@ -68,7 +69,7 @@
                       <sec:authorize access="hasRole('ADMIN')">
                           <div style="width: 100%;margin: auto;">
                             <a class="ripieno-button" style="float: right;" href="#" onclick="editSection('${phone.getSectionName()}', $('#phoneSection'), ${phone.getId()})">
-                                Edit
+                                <i class="fa fa-pencil"></i> Edit
                             </a>
                           </div>
                       </sec:authorize>
@@ -85,7 +86,7 @@
                      <sec:authorize access="hasRole('ADMIN')">
                          <div style="width: 100%;margin: auto;">
                            <a class="ripieno-button" style="float: right;" href="#" onclick="editSection('${email.getSectionName()}', $('#emailSection'), ${email.getId()})">
-                               Edit
+                               <i class="fa fa-pencil"></i> Edit
                            </a>
                          </div>
                      </sec:authorize>
@@ -103,7 +104,7 @@
                   <sec:authorize access="hasRole('ADMIN')">
                        <div style="width: 100%;margin: auto;">
                          <a class="ripieno-button" style="float: right;" href="#" onclick="editSection('${connect.getSectionName()}', $('#connectSection'))">
-                             Edit
+                             <i class="fa fa-pencil"></i> Edit
                          </a>
                        </div>
                    </sec:authorize>
