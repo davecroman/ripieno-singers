@@ -21,9 +21,11 @@
               <sec:authorize access="hasRole('ADMIN')">
                 <c:if test = "${type == 'confirmDeletion'}">
                   <div class="row center warning-message text-block">
-                    <div> Are you sure you want to delete this article? </div>
-                    <div> <a href="/news/${article.getId()}/delete" class="ripieno-button"> YES </a> </div>
-                    <div> <a href="/news" class="ripieno-button"> BACK </a> </div>
+                    <div style="width:100%;text-align:left"> Are you sure you want to delete this article? </div>
+                    <div style="display:flex;">
+                      <div style="margin: 0px 10px;"> <a href="/news/${article.getId()}/delete" class="ripieno-button"> YES </a> </div>
+                      <div style="margin: 0px 10px;"> <a href="/news" class="ripieno-button"> BACK </a> </div>
+                    </div>
                   </div>
                 </c:if>
               </sec:authorize>
