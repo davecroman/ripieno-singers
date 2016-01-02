@@ -6,7 +6,8 @@
     <title>${article.getTitle()}</title>
     <%@ include file="templates/head.jspf" %>
     <link rel="stylesheet" href="/resources/css/news.css" type="text/css"/>
-    <meta property="og:description" content="${fn:substring(article.getContent(), 0, 100)}" />
+    <meta property="og:description" content="${description}" />
+    <meta name="description" content="${description}" />
 </head>
 
 <body>

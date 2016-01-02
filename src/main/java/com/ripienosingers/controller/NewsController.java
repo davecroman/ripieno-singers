@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.ripienosingers.model.NewsArticle;
 import com.ripienosingers.service.NewsService;
 import org.apache.commons.codec.binary.Base64;
+import org.jsoup.Jsoup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -71,6 +72,7 @@ public class NewsController {
         map.put("article", newsArticle);
         map.put("type", "normal");
         map.put("notifications", notifications);
+        map.put("description", Jsoup.parse(newsArticle.getContent()).text().substring(0,200) + "...");
 
         return "newsArticle";
     }
