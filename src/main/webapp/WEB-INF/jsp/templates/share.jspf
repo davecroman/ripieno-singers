@@ -1,9 +1,19 @@
+<link rel="stylesheet" href="/resources/css/share-button.min.css" type="text/css"/>
+
 <div style="text-align:center;">
-  <share-button class="share-button-custom">
+  <share-button class="share-button-custom" onclick="toggleShareButton(${article.getId()});">
 </share-button></div>
 
 <script src="/resources/js/share-button.js"></script>
 
 <script>
   var shareButton = new ShareButton();
+
+  function toggleShareButton(articleId) {
+    var url = "http://wwww.ripienosingers.com/news/" + articleId;
+
+    for( var network in shareButton.config.networks ) {
+      shareButton.config.networks[network].url = url;
+    }
+  }
 </script>

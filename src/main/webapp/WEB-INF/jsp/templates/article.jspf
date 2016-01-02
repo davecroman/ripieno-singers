@@ -1,20 +1,22 @@
 <h2 class="grey-text text-lighten-5 header">
-  <a href="/news/${article.getId()}">
-    <c:out value="${article.getTitle()}" />
-  </a>
+    <a href="/news/${article.getId()}">
+        <c:out value="${article.getTitle()}"/>
+    </a>
 </h2>
 
 <p class="date">
-  <c:out value="${article.getFormattedDate()}" />
+    <c:out value="${article.getFormattedDate()}"/>
 </p>
 
 <sec:authorize access="hasRole('ADMIN')">
-  <div class="row center">
-    <a class="ripieno-button" href="/news/${article.getId()}/editor"> <i class="fa fa-pencil"></i> Modify</a>
-    <a class="ripieno-button" href="/news/${article.getId()}/confirmDelete"><i class="fa fa-trash"></i> Delete</a>
-  </div>
+    <div class="row center">
+        <a class="ripieno-button" href="/news/${article.getId()}/editor"> <i class="fa fa-pencil"></i> Modify</a>
+        <a class="ripieno-button" href="/news/${article.getId()}/confirmDelete"><i class="fa fa-trash"></i> Delete</a>
+    </div>
 </sec:authorize>
 
 <div class="news-content">
-  ${article.getContent()}
+    ${article.getContent()}
 </div>
+
+<%@ include file="share.jspf" %>

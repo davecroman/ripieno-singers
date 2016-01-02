@@ -6,7 +6,7 @@
     <title>${article.getTitle()}</title>
     <%@ include file="templates/head.jspf" %>
     <link rel="stylesheet" href="/resources/css/news.css" type="text/css"/>
-    <link rel="stylesheet" href="/resources/css/share-button.min.css" type="text/css"/>
+    <meta property="og:description" content="${fn:substring(article.getContent(), 0, 100)}" />
 </head>
 
 <body>
@@ -31,7 +31,7 @@
               </sec:authorize>
 
               <%@ include file="templates/article.jspf" %>
-              <%@ include file="templates/share.jspf" %>
+
             </div>
 
         </div>

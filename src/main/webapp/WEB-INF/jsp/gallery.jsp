@@ -15,7 +15,6 @@
             This page is coming soon!
         </div>
     </main>
-
     <%@ include file="templates/footer.jspf" %>
 </body>
 
