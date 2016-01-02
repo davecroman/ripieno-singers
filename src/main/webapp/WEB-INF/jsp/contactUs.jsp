@@ -27,7 +27,7 @@
             <%@ include file="templates/texteditor.jspf" %></div>
             <div style="display:flex;background-color:rgba(255,255,255,0.2)">
               <a href="#" class="ripieno-button2" onclick="$('#popup').addClass('hide')"> Back </a>
-              <button class="ripieno-button2" type="submit"> Save </a>
+              <button class="ripieno-button2" type="submit"> Save </button>
             </div>
           </form>
         </div>
