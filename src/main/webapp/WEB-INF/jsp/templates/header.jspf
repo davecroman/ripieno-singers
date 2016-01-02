@@ -1,51 +1,75 @@
 <header>
     <div class="nav hide-on-small-only">
-      <ul>
-        <li>
-            <div class="flex-display">
-                <a class="with-side-padding-20" href="https://www.facebook.com/pages/The-Ripieno-Singers-Inc/752278521519093?fref=ts" target="_blank">
-                    <i class="fa fa-facebook fa-1x white-font"></i>
-                </a>
-                <a class="with-side-padding-20" href="https://twitter.com/dripienosingers" target="_blank">
-                    <i class="fa fa-twitter fa-1x white-font"></i>
-                </a>
-                <a class="with-side-padding-20" href="https://www.youtube.com/channel/UCbhMmSRV3YspiV33sbBHxvA" target="_blank">
-                    <i class="fa fa-youtube fa-1x white-font"></i>
-                </a>
-                <a class="with-side-padding-20" href="https://instagram.com/theripienosingersinc/" target="_blank">
-                    <i class="fa fa-instagram fa-1x white-font"></i>
-                </a>
-            </div>
-        </li>
-        <li><a href="/home">${requestScope['javax.servlet.forward.request_uri'] == '/home'? '<u style="color:white"><b>Home</b></u>' : 'Home'}</a></li>
-        <li><a href="/aboutUs">${requestScope['javax.servlet.forward.request_uri'] == '/aboutUs'? '<u style="color:white"><b>About Us</b></u>' : 'About Us'}</a></li>
-        <li><a href="/news">${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], "/news")? '<u style="color:white"><b>News</b></u>' : 'News'}</a></li>
-        <li><a href="/gallery">${requestScope['javax.servlet.forward.request_uri'] == '/gallery'? '<u style="color:white"><b>Gallery</b></u>' : 'Gallery'}</a></li>
-        <li><a href="/members">${requestScope['javax.servlet.forward.request_uri'] == '/members'? '<u style="color:white"><b>Members</b></u>' : 'Members'}</a></li>
-        <li><a href="/calendar">${requestScope['javax.servlet.forward.request_uri'] == '/calendar'? '<u style="color:white"><b>Calendar</b></u>' : 'Calendar'}</a></li>
-        <li><a href="/contactUs">${requestScope['javax.servlet.forward.request_uri'] == '/contactUs'? '<u style="color:white"><b>Contact Us</b></u>' : 'Contact Us'}</a></li>
-      </ul>
+        <ul>
+            <li>
+                <div class="flex-display">
+                    <a class="with-side-padding-20"
+                       href="https://www.facebook.com/pages/The-Ripieno-Singers-Inc/752278521519093?fref=ts"
+                       target="_blank">
+                        <i class="fa fa-facebook fa-1x white-font"></i>
+                    </a>
+                    <a class="with-side-padding-20" href="https://twitter.com/dripienosingers" target="_blank">
+                        <i class="fa fa-twitter fa-1x white-font"></i>
+                    </a>
+                    <a class="with-side-padding-20" href="https://www.youtube.com/channel/UCbhMmSRV3YspiV33sbBHxvA"
+                       target="_blank">
+                        <i class="fa fa-youtube fa-1x white-font"></i>
+                    </a>
+                    <a class="with-side-padding-20" href="https://instagram.com/theripienosingersinc/" target="_blank">
+                        <i class="fa fa-instagram fa-1x white-font"></i>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a href="/home">${requestScope['javax.servlet.forward.request_uri'] == '/home'? '<u style="color:white"><b>Home</b></u>' : 'Home'}</a>
+            </li>
+            <li>
+                <a href="/aboutUs">${requestScope['javax.servlet.forward.request_uri'] == '/aboutUs'? '<u style="color:white"><b>About Us</b></u>' : 'About Us'}</a>
+            </li>
+            <li>
+                <a href="/news">${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], "/news")? '<u style="color:white"><b>News</b></u>' : 'News'}</a>
+            </li>
+            <li>
+                <a href="/gallery">${requestScope['javax.servlet.forward.request_uri'] == '/gallery'? '<u style="color:white"><b>Gallery</b></u>' : 'Gallery'}</a>
+            </li>
+            <li>
+                <a href="/members">${requestScope['javax.servlet.forward.request_uri'] == '/members'? '<u style="color:white"><b>Members</b></u>' : 'Members'}</a>
+            </li>
+            <li>
+                <a href="/calendar">${requestScope['javax.servlet.forward.request_uri'] == '/calendar'? '<u style="color:white"><b>Calendar</b></u>' : 'Calendar'}</a>
+            </li>
+            <li>
+                <a href="/contactUs">${requestScope['javax.servlet.forward.request_uri'] == '/contactUs'? '<u style="color:white"><b>Contact Us</b></u>' : 'Contact Us'}</a>
+            </li>
+        </ul>
     </div>
     <div class="nav animated fadeIn hide-on-med-and-up">
-      <div>
-        <a href="#" style="width:50px" id="menu-button"><i class="fa fa-bars fa-2x" style="padding:10px"></i></a>
-      </div>
-      <div class="hide animated fadeIn" id="side-nav">
-         <div class="collection">
-            <a href="/home" class="collection-item black-text">Home</a>
-            <a href="/aboutUs" class="collection-item black-text">About</a>
-            <a href="/news" class="collection-item black-text">News</a>
-            <a href="/gallery" class="collection-item black-text">Gallery</a>
-            <a href="/members" class="collection-item black-text">Members</a>
-            <a href="/calendar" class="collection-item black-text">Calendar</a>
-            <a href="/contactUs" class="collection-item black-text">Contact Us</a>
-          </div>
-      </div>
+        <div style="display:flex;">
+            <a href="#" style="text-align: center;width: 50px;padding-top: 15px;background-color: #444444;"
+               id="menu-button">
+                <i class="fa fa-bars fa-2x"></i>
+            </a>
+            <div class="grey-text text-lighten-5">
+                <h4 style="font-family:'Raleway',serif;padding-left:5px;"> The Ripieno Singers Inc. </h4>
+            </div>
+        </div>
+
+        <div class="hide animated fadeIn" id="side-nav">
+            <div class="collection" style="display: flex;flex-wrap: wrap;justify-content: center;background-color: white;margin:auto;">
+                <a href="/home" class="collection-item black-text">Home</a>
+                <a href="/aboutUs" class="collection-item black-text">About</a>
+                <a href="/news" class="collection-item black-text">News</a>
+                <a href="/gallery" class="collection-item black-text">Gallery</a>
+                <a href="/members" class="collection-item black-text">Members</a>
+                <a href="/calendar" class="collection-item black-text">Calendar</a>
+                <a href="/contactUs" class="collection-item black-text">Contact Us</a>
+            </div>
+        </div>
     </div>
 
     <sec:authorize access="hasRole('ADMIN')">
-      <div class="admin-indicator center">
-        You are viewing this page as an administrator
-      </div>
+        <div class="admin-indicator center">
+            You are viewing this page as an administrator
+        </div>
     </sec:authorize>
 </header>
