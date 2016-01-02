@@ -10,7 +10,7 @@
   var shareButton = new ShareButton();
 
   function toggleShareButton(articleId) {
-    var url = "http://wwww.ripienosingers.com/news/" + articleId;
+    var url = "www.ripienosingers.com/news/" + articleId;
 
     for( var network in shareButton.config.networks ) {
       shareButton.config.networks[network].url = url;
