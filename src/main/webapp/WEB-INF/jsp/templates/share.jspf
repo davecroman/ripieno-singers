@@ -1,19 +1,41 @@
 <link rel="stylesheet" href="/resources/css/share-button.min.css" type="text/css"/>
 
 <div style="text-align:center;">
-  <share-button class="share-button-custom" onclick="toggleShareButton(${article.getId()});">
-</share-button></div>
+    <share-button class="share-button-custom" onclick="toggleShareButton(${article.getId()});">
+    </share-button>
+</div>
 
 <script src="/resources/js/share-button.js"></script>
 
 <script>
-  var shareButton = new ShareButton();
+    var config = {
+        networks: {
+            email: {
+                enabled: false
+            },
+            pinterest: {
+                enabled: false
+            },
+            whatsapp: {
+                enabled: false
+            },
+            reddit: {
+                enabled: false
+            }
+        }
+    };
 
-  function toggleShareButton(articleId) {
-    var url = "www.ripienosingers.com/news/" + articleId;
+    var shareButton = new ShareButton(".share-button-custom", config);
 
-    for( var network in shareButton.config.networks ) {
-      shareButton.config.networks[network].url = url;
+    function toggleShareButton(articleId) {
+        var url = "http://www.ripienosingers.com/news/" + articleId;
+
+        shareButton.config.url = url;
+
+        for (var network in shareButton.config.networks) {
+            if (shareButton.config.networks.hasOwnProperty(network)) {
+                shareButton.config.networks[network].url = url;
+            }
+        }
     }
-  }
 </script>
