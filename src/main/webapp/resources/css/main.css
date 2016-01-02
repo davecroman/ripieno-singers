@@ -108,6 +108,7 @@ main {
 
 .left-column {
     width: 100%;
+    margin-right: 15px;
 }
 
 .right-column {
@@ -178,6 +179,8 @@ main {
     letter-spacing: 3px;
     padding: 10px;
     min-width: 100px;
+    box-sizing: content-box;
+    margin: auto;
 }
 
 .ripieno-button2 {
@@ -192,6 +195,8 @@ main {
     background: transparent;
     border: 0;
     color: rgba(255,255,255,0.8);
+    box-sizing: content-box;
+    margin: auto;
 }
 
 .ripieno-button2:hover {
