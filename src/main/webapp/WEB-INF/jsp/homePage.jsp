@@ -22,6 +22,7 @@
     <div class="center-align animated fadeIn">
         <img src="/resources/png/logo_white.png" height="200px">
     </div>
+    <tags:sectionEditor/>
     <div class="wrap">
         <div class="left-column">
             <sec:authorize access="hasRole('ADMIN')">

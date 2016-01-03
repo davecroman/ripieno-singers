@@ -4,7 +4,7 @@ public class BasicSection {
 
     private String sectionname;
 
-    private String contents;
+    private String content;
 
     private int id;
 
@@ -12,8 +12,8 @@ public class BasicSection {
         return sectionname;
     }
 
-    public String getContents() {
-        return contents;
+    public String getContent() {
+        return content;
     }
 
     public int getId() {

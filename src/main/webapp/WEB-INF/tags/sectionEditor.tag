@@ -1,0 +1,32 @@
+<div id="sectionEditor" class="popup-bg hide">
+    <div class="popup-container">
+        <form onSubmit="onSubmit()" action="/contactUs/updateSection" method="POST">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <input type="hidden" id="sectionContent" name="sectionContent">
+            <input type="hidden" id="sectionId" name="sectionId">
+            <div style="display:flex;margin-bottom:5px;">
+                <a class="fa fa-times fa-2x" style="width:100%;text-align:right;"
+                   onclick="$('#popup').addClass('hide')"></a>
+            </div>
+            <div style="display:flex;background-color: rgba(255,255,255,0.2);padding-left: 10px;padding-right: 10px;">
+                <input id="section-header" name="sectionName" style="color:white;font-size:20px" type="text"
+                       value="Title" required></div>
+            <div>
+                <%@ include file="/WEB-INF/jsp/templates/texteditor.jspf" %>
+            </div>
+            <div style="display:flex;background-color:rgba(255,255,255,0.2)">
+                <a href="#" class="ripieno-button2" onclick="$('#popup').addClass('hide')"> Back </a>
+                <button class="ripieno-button2" type="submit"> Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function editSection(sectionName, sectionContent, sectionId) {
+        $('#sectionEditor').removeClass('hide');
+        $('#section-header').val(sectionName);
+        $('#sectionId').val(sectionId);
+        editor.setHTML(sectionContent.html());
+    }
+</script>

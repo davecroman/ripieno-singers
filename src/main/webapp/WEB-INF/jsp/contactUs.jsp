@@ -4,137 +4,116 @@
 <html>
 <head>
     <title>The Ripieno Singers - Contact Us</title>
-    <meta name="description" content="Contact Details of The Ripieno Singers Inc. Details available for location, phone, and email." />
+    <meta name="description"
+          content="Contact Details of The Ripieno Singers Inc. Details available for location, phone, and email."/>
     <%@ include file="templates/head.jspf" %>
 </head>
 
 <body>
-    <%@ include file="templates/header.jspf" %>
+<%@ include file="templates/header.jspf" %>
 
-    <main>
-       <div id="popup" class="popup-bg hide">
-        <div class="popup-container">
-          <form onSubmit="onSubmit()" action="/contactUs/updateSection" method="POST">
-            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            <input type="hidden" id="sectionContent" name="sectionContent">
-            <input type="hidden" id="sectionId" name="sectionId">
-            <div style="display:flex;margin-bottom:5px;">
-              <a class="fa fa-times fa-2x" style="width:100%;text-align:right;" onclick="$('#popup').addClass('hide')"></a>
-            </div>
-            <div style="display:flex;background-color: rgba(255,255,255,0.2);padding-left: 10px;padding-right: 10px;">
-              <input id="section-header" name="sectionName" style="color:white;font-size:20px" type="text" value="Title" required></div>
-            <div>
-            <%@ include file="templates/texteditor.jspf" %></div>
-            <div style="display:flex;background-color:rgba(255,255,255,0.2)">
-              <a href="#" class="ripieno-button2" onclick="$('#popup').addClass('hide')"> Back </a>
-              <button class="ripieno-button2" type="submit"> Save </button>
-            </div>
-          </form>
+<main>
+    <tags:sectionEditor/>
+    <c:if test="${not empty notifications}">
+        <div class="wrap" style="width:100%;display:block;">
+            <%@ include file="templates/notifications.jspf" %>
         </div>
-       </div>
-       <c:if test="${not empty notifications}">
-         <div class="wrap" style="width:100%;display:block;">
-          <%@ include file="templates/notifications.jspf" %>
-         </div>
-       </c:if>
-       <div class="wrap">
-           <c:if test="${not empty visit}">
-             <div class="left-column animated fadeIn" style="margin-right:10px">
-              <div style="display:flex;">
-                <h3 class="grey-text text-lighten-5" style="width:100%">
-                    ${visit.getSectionName()}
-                </h3>
-                <sec:authorize access="hasRole('ADMIN')">
-                     <div style="width: 100%;margin: auto;">
-                       <a class="ripieno-button" style="float: right;" href="#" onclick="editSection('${visit.getSectionName()}', $('#visitSection'), ${visit.getId()});">
-                           <i class="fa fa-pencil"></i> Edit
-                       </a>
-                     </div>
-                 </sec:authorize>
-              </div>
-                <div id="visitSection" class="text-block grey-text text-lighten-5">
-                   ${visit.getContents()}
-                 </div>
-                 <div class="video-container responsive-video animated fadeIn">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.966487088723!2d121.01108231484027!3d14.600984989802273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9de7e58e46d%3A0x8ef8d227ae46c96b!2s4427+Old+Sta.+Mesa+St%2C+Santa+Mesa%2C+Manila%2C+1016+Metro+Manila%2C+Philippines!5e0!3m2!1sen!2sau!4v1449389022985" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-             </div>
-           </c:if>
-           <div class="right-column animated fadeIn" style="margin-right:10px">
-               <c:if test="${not empty phone}">
-                 <div style="display:flex;">
-                      <h3 class="grey-text text-lighten-5" style="width:100%">
-                         ${phone.getSectionName()}
-                      </h3>
-                      <sec:authorize access="hasRole('ADMIN')">
-                          <div style="width: 100%;margin: auto;">
-                            <a class="ripieno-button" style="float: right;" href="#" onclick="editSection('${phone.getSectionName()}', $('#phoneSection'), ${phone.getId()})">
+    </c:if>
+    <div class="wrap">
+        <c:if test="${not empty visit}">
+            <div class="left-column animated fadeIn" style="margin-right:10px">
+                <div style="display:flex;">
+                    <h3 class="grey-text text-lighten-5" style="width:100%">
+                            ${visit.getSectionName()}
+                    </h3>
+                    <sec:authorize access="hasRole('ADMIN')">
+                        <div style="width: 100%;margin: auto;">
+                            <a class="ripieno-button" style="float: right;" href="#"
+                               onclick="editSection('${visit.getSectionName()}', $('#visitSection'), ${visit.getId()});">
                                 <i class="fa fa-pencil"></i> Edit
                             </a>
-                          </div>
-                      </sec:authorize>
-                 </div>
-                 <div id="phoneSection" class="grey-text text-lighten-5 text-block">
-                      ${phone.getContents()}
-                 </div>
-               </c:if>
-               <c:if test="${not empty email}">
-                 <div style="display:flex;">
-                     <h3 class="grey-text text-lighten-5" style="width:100%">
-                        ${email.getSectionName()}
-                     </h3>
-                     <sec:authorize access="hasRole('ADMIN')">
-                         <div style="width: 100%;margin: auto;">
-                           <a class="ripieno-button" style="float: right;" href="#" onclick="editSection('${email.getSectionName()}', $('#emailSection'), ${email.getId()})">
-                               <i class="fa fa-pencil"></i> Edit
-                           </a>
-                         </div>
-                     </sec:authorize>
-                 </div>
-                <div id="emailSection" class="grey-text text-lighten-5 text-block">
-                     ${email.getContents()}
+                        </div>
+                    </sec:authorize>
                 </div>
-              </c:if>
-              <c:if test="${not empty connect}">
+                <div id="visitSection" class="text-block grey-text text-lighten-5">
+                        ${visit.getContent()}
+                </div>
+                <div class="video-container responsive-video animated fadeIn">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.966487088723!2d121.01108231484027!3d14.600984989802273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c9de7e58e46d%3A0x8ef8d227ae46c96b!2s4427+Old+Sta.+Mesa+St%2C+Santa+Mesa%2C+Manila%2C+1016+Metro+Manila%2C+Philippines!5e0!3m2!1sen!2sau!4v1449389022985"
+                            width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </c:if>
+        <div class="right-column animated fadeIn" style="margin-right:10px">
+            <c:if test="${not empty phone}">
                 <div style="display:flex;">
-                  <h3 class="grey-text text-lighten-5" style="width:100%">
-                      ${connect.getSectionName()}
-                  </h3>
-                  <%--
-                  <sec:authorize access="hasRole('ADMIN')">
-                       <div style="width: 100%;margin: auto;">
-                         <a class="ripieno-button" style="float: right;" href="#" onclick="editSection('${connect.getSectionName()}', $('#connectSection'))">
-                             <i class="fa fa-pencil"></i> Edit
-                         </a>
-                       </div>
-                   </sec:authorize>
-                   --%>
-                 </div>
-                 <div class="text-block">
-                   <div id="connectSection">
-                     ${connect.getContents()}
-                   </div>
-                 </div>
-               </c:if>
+                    <h3 class="grey-text text-lighten-5" style="width:100%">
+                            ${phone.getSectionName()}
+                    </h3>
+                    <sec:authorize access="hasRole('ADMIN')">
+                        <div style="width: 100%;margin: auto;">
+                            <a class="ripieno-button" style="float: right;" href="#"
+                               onclick="editSection('${phone.getSectionName()}', $('#phoneSection'), ${phone.getId()})">
+                                <i class="fa fa-pencil"></i> Edit
+                            </a>
+                        </div>
+                    </sec:authorize>
+                </div>
+                <div id="phoneSection" class="grey-text text-lighten-5 text-block">
+                        ${phone.getContent()}
+                </div>
+            </c:if>
+            <c:if test="${not empty email}">
+                <div style="display:flex;">
+                    <h3 class="grey-text text-lighten-5" style="width:100%">
+                            ${email.getSectionName()}
+                    </h3>
+                    <sec:authorize access="hasRole('ADMIN')">
+                        <div style="width: 100%;margin: auto;">
+                            <a class="ripieno-button" style="float: right;" href="#"
+                               onclick="editSection('${email.getSectionName()}', $('#emailSection'), ${email.getId()})">
+                                <i class="fa fa-pencil"></i> Edit
+                            </a>
+                        </div>
+                    </sec:authorize>
+                </div>
+                <div id="emailSection" class="grey-text text-lighten-5 text-block">
+                        ${email.getContent()}
+                </div>
+            </c:if>
+            <c:if test="${not empty connect}">
+                <div style="display:flex;">
+                    <h3 class="grey-text text-lighten-5" style="width:100%">
+                            ${connect.getSectionName()}
+                    </h3>
+                        <%--
+                        <sec:authorize access="hasRole('ADMIN')">
+                             <div style="width: 100%;margin: auto;">
+                               <a class="ripieno-button" style="float: right;" href="#" onclick="editSection('${connect.getSectionName()}', $('#connectSection'))">
+                                   <i class="fa fa-pencil"></i> Edit
+                               </a>
+                             </div>
+                         </sec:authorize>
+                         --%>
+                </div>
+                <div class="text-block">
+                    <div id="connectSection">
+                            ${connect.getContent()}
+                    </div>
+                </div>
+            </c:if>
 
-           </div>
-       </div>
-       <script>
-          function editSection(sectionName, sectionContent, sectionId){
-            $('#popup').removeClass('hide');
-            $('#section-header').val(sectionName);
-            $('#sectionId').val(sectionId);
-            editor.setHTML(sectionContent.html());
-          }
-
-          function onSubmit(){
+        </div>
+    </div>
+    <script>
+        function onSubmit() {
             $('#sectionContent').val(editor.getHTML());
-          }
+        }
 
-       </script>
-    </main>
+    </script>
+</main>
 
-    <%@ include file="templates/footer.jspf" %>
+<%@ include file="templates/footer.jspf" %>
 </body>
 
 <%@ include file="templates/script.jspf" %>
