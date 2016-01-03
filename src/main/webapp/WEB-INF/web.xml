@@ -9,6 +9,16 @@
         <welcome-file>jsp/landingPage.jsp</welcome-file>
     </welcome-file-list>
 
+    <error-page>
+        <error-code>401</error-code>
+        <location>/unauthorized</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/pagenotfound</location>
+    </error-page>
+
     <filter>
         <!-- This filter has to come before other filters. -->
         <filter-name>characterEncodingFilter</filter-name>

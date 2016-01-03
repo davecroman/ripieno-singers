@@ -16,6 +16,6 @@ public class AdminPageController {
 
     @RequestMapping(value="/unauthorized", method = RequestMethod.GET)
     public String goToUnauthorizedMessagePage() {
-        return "adminUnauthorized";
+        return "errors/401";
     }
 }
