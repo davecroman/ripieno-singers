@@ -1,6 +1,6 @@
 <div id="sectionEditor" class="popup-bg hide">
     <div class="popup-container">
-        <form onSubmit="onSubmit()" action="/contactUs/updateSection" method="POST">
+        <form onSubmit="onSubmit()" action="${sectionAction}" method="POST">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <input type="hidden" id="sectionContent" name="sectionContent">
             <input type="hidden" id="sectionId" name="sectionId">

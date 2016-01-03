@@ -19,10 +19,18 @@
 <%@ include file="templates/header.jspf" %>
 
 <main>
+    <c:if test="${not empty notifications}">
+        <div class="wrap" style="width:100%;display:block;">
+            <%@ include file="templates/notifications.jspf" %>
+        </div>
+    </c:if>
+
     <div class="center-align animated fadeIn">
         <img src="/resources/png/logo_white.png" height="200px">
     </div>
-    <tags:sectionEditor/>
+
+    <c:set var="sectionAction" value="/home/updateSection" scope="page"/>
+    <%@ include file="templates/sectionEditor.jspf" %>
     <div class="wrap">
         <div class="left-column">
             <sec:authorize access="hasRole('ADMIN')">
@@ -87,25 +95,26 @@
                     </li>
                 </ul>
             </div>
+            <c:set var="sectionName" value="${servicesSection.getSectionName()}" scope="page"/>
+            <c:set var="sectionContent" value="${servicesSection.getContent()}" scope="page"/>
+            <c:set var="sectionId" value="${servicesSection.getId()}" scope="page"/>
+            <c:set var="contentName" value="servicesContent" scope="page"/>
+
             <div>
-                <div class="subheader"> Services Offered</div>
+                <div class="subheader">${sectionName}</div>
                 <sec:authorize access="hasRole('ADMIN')">
-                    <div style="width: 100%;margin: auto;text-align: center;margin: 15px 0;">
-                        <a class="ripieno-button" href="#">
+                    <div style="width: 100%;text-align: center;margin: 15px 0;">
+                        <a class="ripieno-button" href="#"
+                           onClick="editSection('${sectionName}', $('#${contentName}'), ${sectionId})">
                             <i class="fa fa-pencil"></i> Edit
                         </a>
                     </div>
                 </sec:authorize>
             </div>
 
-            <p class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
-                As a choral group, <b class="white-text"> The Ripieno Singers </b> performs and entertains in various
-                forms and styles of singing: classical, pop, ballad, folk and more in plentiful events and occasions
-                such as weddings, seminars, conferences, concerts, workshops, birthdays and wakes as well. Solo, Duo and
-                Small group performances will surely showcase the group's exceptional talents in a variety of events to
-                capture the hearts of the listeners. <br><br> Invite us to perform on your events and be enchanted with
-                our God given talents!
-            </p>
+            <div id="${contentName}" class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
+                ${sectionContent}
+            </div>
 
             <div>
                 <div class="subheader"> Did you know?</div>
@@ -125,28 +134,25 @@
         </div>
 
         <div class="right-column">
+            <c:set var="sectionName" value="${introSection.getSectionName()}" scope="page"/>
+            <c:set var="sectionContent" value="${introSection.getContent()}" scope="page"/>
+            <c:set var="sectionId" value="${introSection.getId()}" scope="page"/>
+            <c:set var="contentName" value="introContent" scope="page"/>
             <div class="header">
-                The Ripieno <br> Singers Inc.
+                ${sectionName}
             </div>
+
             <sec:authorize access="hasRole('ADMIN')">
                 <div style="width: 100%;text-align: center;margin: 15px 0;display:flex">
-                    <a class="ripieno-button" style="float: right;" href="#">
+                    <a class="ripieno-button" style="float: right;" href="#"
+                       onClick="editSection('${sectionName}', $('#${contentName}'), ${sectionId})">
                         <i class="fa fa-pencil"></i> Edit
                     </a>
                 </div>
             </sec:authorize>
-            <p class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
-                <b class="white-text"> The Ripieno Singers </b> is a newly founded group in 2014 that aims to
-                continuously stretch God&#39;s love through choral singing. Following its roots, all of its members are
-                students and graduates of Polytechnic University of the Philippines Laboratory High School and were
-                members of <a target="_blank" href="https://en.wikipedia.org/wiki/PUPLHS_Chorale"> <b> PUPLHS
-                Chorale </b> </a>. Many of them are now enrolled in different universities around Metro Manila and some
-                of them are now working as professionals. <br><br> Because of its unique way of connecting to people
-                through their music, Mr. Jarin after resigning from his post as the conductor of PUPLHS Chorale in 2014
-                together with his members, decided to create the <b class="white-text">The Ripieno Singers Inc.</b> to
-                keep their friendships, to continue their passion and commitment to God in sharing and inspiring other
-                people through singing.
-            </p>
+            <div id="${contentName}" class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
+                ${sectionContent}
+            </div>
 
             <sec:authorize access="hasRole('ADMIN')">
                 <div style="width: 100%;margin: auto;display:flex;">
@@ -172,6 +178,10 @@
             $('.slider').slider();
         }); // end of document ready
     })(jQuery); // end of jQuery name space
+
+    function onSubmit() {
+        $('#sectionContent').val(editor.getHTML());
+    }
 </script>
 
 <%@ include file="templates/script.jspf" %>

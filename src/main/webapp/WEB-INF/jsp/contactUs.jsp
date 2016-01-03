@@ -13,7 +13,9 @@
 <%@ include file="templates/header.jspf" %>
 
 <main>
-    <tags:sectionEditor/>
+    <c:set var="sectionAction" value="/contactUs/updateSection" scope="page" />
+    <%@ include file="templates/sectionEditor.jspf" %>
+
     <c:if test="${not empty notifications}">
         <div class="wrap" style="width:100%;display:block;">
             <%@ include file="templates/notifications.jspf" %>
@@ -109,7 +111,6 @@
         function onSubmit() {
             $('#sectionContent').val(editor.getHTML());
         }
-
     </script>
 </main>
 

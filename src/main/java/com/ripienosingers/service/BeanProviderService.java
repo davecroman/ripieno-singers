@@ -15,7 +15,7 @@ import retrofit.Retrofit;
 public class BeanProviderService {
 
     @Bean
-    public Retrofit retrofit(){
+    public Retrofit retrofit() {
         Gson gson = new GsonBuilder()
                 .setDateFormat("yyyy-M-dd")
                 .create();
@@ -44,6 +44,12 @@ public class BeanProviderService {
     @Autowired
     public ContactsService contactsService(Retrofit retrofit) {
         return retrofit.create(ContactsService.class);
+    }
+
+    @Bean
+    @Autowired
+    public HomepageService homepageService(Retrofit retrofit) {
+        return retrofit.create(HomepageService.class);
     }
 
     @Bean(name = "authorizationKey")
