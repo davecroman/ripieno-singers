@@ -39,4 +39,8 @@ public class NewsArticle implements Comparable<NewsArticle>{
     public int compareTo(NewsArticle article) {
         return this.datepublished.compareTo(article.getDatePublished());
     }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 }

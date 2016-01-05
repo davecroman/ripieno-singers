@@ -95,6 +95,60 @@
                     </li>
                 </ul>
             </div>
+
+            <c:if test="${not empty headlineArticle}">
+                <c:set var="sectionContent" value="${headlineArticle.getContent()}" scope="page"/>
+                <c:set var="articleId" value="${headlineArticle.getId()}" scope="page"/>
+
+                <div>
+                    <div class="subheader">Headline</div>
+                    <sec:authorize access="hasRole('ADMIN')">
+                        <div style="width: 100%;text-align: center;margin: 15px 0;">
+                            <a class="ripieno-button" href="#" onclick="editHeadline();">
+                                <i class="fa fa-pencil"></i> Change
+                            </a>
+                        </div>
+                    </sec:authorize>
+                </div>
+
+                <div id="headlineContent"
+                     class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
+                    <div><b class="white-text" style="font-size:20px">${headlineArticle.getTitle()}</b></div>
+                    <div>${sectionContent}</div>
+                    <div style="width: 100%;text-align: center;margin-top: 15px;margin-bottom: 10px;">
+                        <a class="ripieno-button" href="/news/${headlineArticle.getId()}">Read more</a>
+                    </div>
+                </div>
+
+                <div id="headline-editor" class="popup-bg hide">
+                    <div class="popup-container">
+                        <h4 class="white-text">Change Headline</h4>
+                        <form action="/home/changeHeadline" method="POST">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                            <div style="color:white;background-color: darkgreen; padding:10px"><b>How to determine id of article:</b><br>
+                                1. Go to the News section <br>
+                                2. Open the article you want to feature <br>
+                                3. Copy the number at the very end of the resulting URL
+                            </div>
+                            <input id="article-id" name="articleId" style="color:white;font-size:20px" type="text"
+                                   placeholder="Article ID" required/>
+                            <div style="display:flex;background-color:rgba(255,255,255,0.2)">
+                                <a href="#" class="ripieno-button2" onclick="$('#headline-editor').addClass('hide')">
+                                    Back </a>
+                                <button class="ripieno-button2" type="submit"> Change</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <script>
+                    function editHeadline() {
+                        $('#headline-editor').removeClass("hide");
+                        $('#article-id').focus();
+                    }
+                </script>
+            </c:if>
+
             <c:set var="sectionName" value="${servicesSection.getSectionName()}" scope="page"/>
             <c:set var="sectionContent" value="${servicesSection.getContent()}" scope="page"/>
             <c:set var="sectionId" value="${servicesSection.getId()}" scope="page"/>
@@ -115,22 +169,6 @@
             <div id="${contentName}" class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
                 ${sectionContent}
             </div>
-
-            <div>
-                <div class="subheader"> Did you know?</div>
-                <sec:authorize access="hasRole('ADMIN')">
-                    <div style="width: 100%;margin: auto;text-align: center;margin: 15px 0;">
-                        <a class="ripieno-button" href="#">
-                            <i class="fa fa-pencil"></i> Manage
-                        </a>
-                    </div>
-                </sec:authorize>
-            </div>
-
-            <p class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
-                <b class="white-text"> Ephraim Gianan </b> is the only member able to attend all major competitions
-                joined by the group here (Davao) and abroad (Malaysia, Vietnam, Guam).
-            </p>
         </div>
 
         <div class="right-column">
@@ -166,6 +204,22 @@
                 <iframe width="490" height="281" src="https://www.youtube.com/embed/yEA6uogFc9c?controls=1&showinfo=1"
                         frameborder="0" allowfullscreen></iframe>
             </div>
+
+            <div>
+                <div class="subheader"> Did you know?</div>
+                <sec:authorize access="hasRole('ADMIN')">
+                    <div style="width: 100%;margin: auto;text-align: center;margin: 15px 0;">
+                        <a class="ripieno-button" href="#">
+                            <i class="fa fa-pencil"></i> Manage
+                        </a>
+                    </div>
+                </sec:authorize>
+            </div>
+
+            <p class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
+                <b class="white-text"> Ephraim Gianan </b> is the only member able to attend all major competitions
+                joined by the group here (Davao) and abroad (Malaysia, Vietnam, Guam).
+            </p>
         </div>
     </div>
 </main>
