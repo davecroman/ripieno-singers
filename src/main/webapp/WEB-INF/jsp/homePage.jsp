@@ -138,7 +138,7 @@
             <c:set var="sectionContent" value="${introSection.getContent()}" scope="page"/>
             <c:set var="sectionId" value="${introSection.getId()}" scope="page"/>
             <c:set var="contentName" value="introContent" scope="page"/>
-            <div class="header">
+            <div class="header" style="margin:10px;">
                 ${sectionName}
             </div>
 
@@ -184,7 +184,6 @@
     }
 </script>
 
-<%@ include file="templates/script.jspf" %>
 </body>
 
 </html>

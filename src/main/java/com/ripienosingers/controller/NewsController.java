@@ -64,6 +64,9 @@ public class NewsController {
 
         try {
             newsArticle = getNewsArticle(articleId);
+            if (newsArticle == null) {
+                throw new NullPointerException();
+            }
         } catch (Exception e) {
             notifications.add("Oops! We couldn't retrieve data for this news article. Please try again later");
             System.err.println(e.getMessage());
@@ -72,7 +75,7 @@ public class NewsController {
         map.put("article", newsArticle);
         map.put("type", "normal");
         map.put("notifications", notifications);
-        map.put("description", Jsoup.parse(newsArticle.getContent()).text().substring(0,200) + "...");
+        map.put("description", Jsoup.parse(newsArticle.getContent()).text().substring(0, 200) + "...");
 
         return "newsArticle";
     }

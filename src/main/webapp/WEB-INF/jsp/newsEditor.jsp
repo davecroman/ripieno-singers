@@ -77,8 +77,6 @@
     <%@ include file="templates/footer.jspf" %>
 </body>
 
-<%@ include file="templates/script.jspf" %>
-
 <script>
   function onFinish(){
     var title = $("#titleInput").val();
