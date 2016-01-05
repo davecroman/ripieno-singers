@@ -60,7 +60,7 @@ public class HomepageController {
             NewsArticle headlineArticle = newsService.getArticle(headline.getArticleId()).execute().body();
 
             String articleText = Jsoup.parse(headlineArticle.getContent()).text();
-            headlineArticle.setContent(articleText.substring(0, articleText.length() <= 200 ? articleText.length() : 200) + "...");
+            headlineArticle.setContent(articleText.substring(0, articleText.length() <= 200 ? articleText.length() : 200) + " [...]");
             map.put("headlineArticle", headlineArticle);
         } catch (Exception e) {
             notifications.add("Oops! A problem occurred while retrieving data for this page. The service may be down. Try again later.");

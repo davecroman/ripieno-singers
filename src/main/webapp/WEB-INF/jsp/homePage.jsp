@@ -113,7 +113,13 @@
 
                 <div id="headlineContent"
                      class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
-                    <div><b class="white-text" style="font-size:20px">${headlineArticle.getTitle()}</b></div>
+                    <div>
+                        <b style="font-size:20px">
+                            <a href="/news/${headlineArticle.getId()}" style="color:#EEEEEE">
+                                ${headlineArticle.getTitle()}
+                            </a>
+                        </b>
+                    </div>
                     <div>${sectionContent}</div>
                     <div style="width: 100%;text-align: center;margin-top: 15px;margin-bottom: 10px;">
                         <a class="ripieno-button" href="/news/${headlineArticle.getId()}">Read more</a>

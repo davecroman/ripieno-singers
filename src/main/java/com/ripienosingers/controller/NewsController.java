@@ -77,7 +77,7 @@ public class NewsController {
         map.put("notifications", notifications);
 
         String articleText = Jsoup.parse(newsArticle.getContent()).text();
-        map.put("description", articleText.substring(0, articleText.length() <= 200? articleText.length() : 200) + " [...] ");
+        map.put("description", articleText.substring(0, articleText.length() <= 200? articleText.length() : 200) + "...");
 
         return "newsArticle";
     }
