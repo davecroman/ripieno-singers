@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import retrofit.GsonConverterFactory;
 import retrofit.Retrofit;
 
+import java.util.concurrent.TimeUnit;
+
 @Configuration
 public class BeanProviderService {
 
@@ -24,6 +26,7 @@ public class BeanProviderService {
         logging.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient httpClient = new OkHttpClient();
         httpClient.interceptors().add(logging);
+        httpClient.setConnectTimeout(60, TimeUnit.SECONDS);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://api.fieldbook.com/v1/567e1d9ef1a77803000e152d/")
