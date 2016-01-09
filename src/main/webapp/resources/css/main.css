@@ -32,8 +32,8 @@ main {
     font-weight: bold;
     line-height: 120px;
     text-align: center;
-    color: white;
     transition: .3s background-color;
+    background-color: rgba(0,0,0,0.8);
 }
 
 .round-button:hover {
@@ -197,7 +197,7 @@ main {
     border: 0;
     color: rgba(255, 255, 255, 0.8);
     box-sizing: content-box;
-    margin: auto;
+    background-color: rgba(0,0,0,0.8);
 }
 
 .ripieno-button2:hover {

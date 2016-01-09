@@ -15,7 +15,7 @@
 
     <title>The Ripieno Singers</title>
 
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/ripienoicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/resources/css/landingpage.css" type="text/css"/>
     <link rel="stylesheet" href="/resources/css/animate.min.css" type="text/css"/>
     <link rel="stylesheet" href="/resources/css/main.css" type="text/css"/>
@@ -77,7 +77,7 @@
 
         <div class="containeritem animated fadeIn">
             <div class="entersite-button">
-                <a href="home"> CONTINUE TO SITE </a>
+                <a href="home" class="white-text"> CONTINUE TO SITE </a>
             </div>
         </div>
 

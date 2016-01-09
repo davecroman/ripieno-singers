@@ -5,7 +5,7 @@
 <meta property="og:image" content="https://ripienosingers.herokuapp.com/resources/jpg/welcomebg.jpg" />
 <meta name="author" content="The Ripieno Singers Inc.">
 
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/ripienoicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="/resources/css/navigator.css" type="text/css"/>
 <link rel="stylesheet" href="/resources/css/animate.min.css" type="text/css"/>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">

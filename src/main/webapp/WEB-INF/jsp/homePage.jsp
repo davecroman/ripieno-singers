@@ -155,6 +155,7 @@
                 </script>
             </c:if>
 
+            <%---------- SERVICES SECTION ----------%>
             <c:set var="sectionName" value="${servicesSection.getSectionName()}" scope="page"/>
             <c:set var="sectionContent" value="${servicesSection.getContent()}" scope="page"/>
             <c:set var="sectionId" value="${servicesSection.getId()}" scope="page"/>
@@ -174,10 +175,14 @@
 
             <div id="${contentName}" class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
                 ${sectionContent}
+                <div style="width: 100%;text-align: center;margin-top: 15px;margin-bottom: 10px;">
+                    <a class="ripieno-button" href="/contactUs">Get in touch</a>
+                </div>
             </div>
         </div>
 
         <div class="right-column">
+            <%---------- INTRO SECTION ----------%>
             <c:set var="sectionName" value="${introSection.getSectionName()}" scope="page"/>
             <c:set var="sectionContent" value="${introSection.getContent()}" scope="page"/>
             <c:set var="sectionId" value="${introSection.getId()}" scope="page"/>
@@ -194,10 +199,16 @@
                     </a>
                 </div>
             </sec:authorize>
-            <div id="${contentName}" class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
-                ${sectionContent}
+            <div class="text-block with-margin-left-right animated fadeIn">
+                <div id="${contentName}" class="grey-text text-lighten-2">
+                    ${sectionContent}
+                </div>
+                <div style="width: 100%;text-align: center;margin-top: 15px;margin-bottom: 10px;">
+                    <a class="ripieno-button" href="/aboutUs">Learn More</a>
+                </div>
             </div>
 
+            <%---------- WELCOME VIDEO ----------%>
             <sec:authorize access="hasRole('ADMIN')">
                 <div style="width: 100%;margin: auto;display:flex;">
                     <div style="width:100%"><h4 class="grey-text">Welcome Video</h4></div>
@@ -211,6 +222,7 @@
                         frameborder="0" allowfullscreen></iframe>
             </div>
 
+            <%---------- DID YOU KNOW ----------%>
             <div>
                 <div class="subheader"> Did you know?</div>
                 <sec:authorize access="hasRole('ADMIN')">
