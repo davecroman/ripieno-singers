@@ -37,7 +37,7 @@
                 <div style="width: 100%;margin: auto;display:flex;">
                     <div style="width:100%"><h4 class="grey-text">Slider</h4></div>
                     <div class="ripieno-button">
-                        <a href="#" style="display:flex"><i class="fa fa-pencil"></i> Manage </a>
+                        <a style="display:flex"><i class="fa fa-pencil"></i> Manage </a>
                     </div>
                 </div>
             </sec:authorize>
@@ -96,6 +96,7 @@
                 </ul>
             </div>
 
+            <%---------- HEADLINE SECTION ----------%>
             <c:if test="${not empty headlineArticle}">
                 <c:set var="sectionContent" value="${headlineArticle.getContent()}" scope="page"/>
                 <c:set var="articleId" value="${headlineArticle.getId()}" scope="page"/>
@@ -104,7 +105,7 @@
                     <div class="subheader">Headline</div>
                     <sec:authorize access="hasRole('ADMIN')">
                         <div style="width: 100%;text-align: center;margin: 15px 0;">
-                            <a class="ripieno-button" href="#" onclick="editHeadline();">
+                            <a class="ripieno-button" onclick="editHeadline();">
                                 <i class="fa fa-pencil"></i> Change
                             </a>
                         </div>
@@ -116,7 +117,7 @@
                     <div>
                         <b style="font-size:20px">
                             <a href="/news/${headlineArticle.getId()}" style="color:#EEEEEE">
-                                ${headlineArticle.getTitle()}
+                                    ${headlineArticle.getTitle()}
                             </a>
                         </b>
                     </div>
@@ -131,7 +132,8 @@
                         <h4 class="white-text">Change Headline</h4>
                         <form action="/home/changeHeadline" method="POST">
                             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-                            <div style="color:white;background-color: darkgreen; padding:10px"><b>How to determine id of article:</b><br>
+                            <div style="color:white;background-color: darkgreen; padding:10px"><b>How to determine id of
+                                article:</b><br>
                                 1. Go to the News section <br>
                                 2. Open the article you want to feature <br>
                                 3. Copy the number at the very end of the resulting URL
@@ -139,7 +141,7 @@
                             <input id="article-id" name="articleId" style="color:white;font-size:20px" type="text"
                                    placeholder="Article ID" required/>
                             <div style="display:flex;background-color:rgba(255,255,255,0.2)">
-                                <a href="#" class="ripieno-button2" onclick="$('#headline-editor').addClass('hide')">
+                                <a class="ripieno-button2" onclick="$('#headline-editor').addClass('hide')">
                                     Back </a>
                                 <button class="ripieno-button2" type="submit"> Change</button>
                             </div>
@@ -165,7 +167,7 @@
                 <div class="subheader">${sectionName}</div>
                 <sec:authorize access="hasRole('ADMIN')">
                     <div style="width: 100%;text-align: center;margin: 15px 0;">
-                        <a class="ripieno-button" href="#"
+                        <a class="ripieno-button"
                            onClick="editSection('${sectionName}', $('#${contentName}'), ${sectionId})">
                             <i class="fa fa-pencil"></i> Edit
                         </a>
@@ -173,8 +175,11 @@
                 </sec:authorize>
             </div>
 
-            <div id="${contentName}" class="with-margin-left-right animated fadeIn grey-text text-lighten-2 text-block">
-                ${sectionContent}
+            <div class="text-block with-margin-left-right animated fadeIn">
+                <div id="${contentName}"
+                     class="grey-text text-lighten-2">
+                    ${sectionContent}
+                </div>
                 <div style="width: 100%;text-align: center;margin-top: 15px;margin-bottom: 10px;">
                     <a class="ripieno-button" href="/contactUs">Get in touch</a>
                 </div>
