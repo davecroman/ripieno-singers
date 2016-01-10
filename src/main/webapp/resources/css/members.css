@@ -83,6 +83,10 @@
     width: 100%;
 }
 
+#materialbox-overlay {
+    background-color: rgba(0,0,0,0.80);
+}
+
 @media (max-width: 900px) {
 
     .profile-pic {
