@@ -40,7 +40,7 @@
         <div class="profile-list">
 
             <c:forEach items="${members}" var="member">
-                <div class="profile-block">
+                <div class="profile-block animated fadeIn">
                     <sec:authorize access="hasRole('ADMIN')">
                         <div class="profile-admin-bar">
                             <div class="ripieno-button"
@@ -62,7 +62,7 @@
                     </sec:authorize>
                     <div class="profile-columns">
                         <div class="profile-bar">
-                            <div class="profile-pic">
+                            <div class="profile-pic animated fadeIn">
                                 <img class="materialboxed"
                                      src="${not empty member.getProfilePic()? member.getProfilePic() : '/resources/jpg/profile-nopic.jpg'}"/>
                             </div>
