@@ -79,6 +79,10 @@
     margin-right: 10px;
 }
 
+.materialboxed {
+    width: 100%;
+}
+
 @media (max-width: 900px) {
 
     .profile-pic {

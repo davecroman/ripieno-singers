@@ -35,7 +35,7 @@
                 There are no members to show at the moment. Please come back later;
             </div>
         </c:if>
-        
+
         <div class="profile-list">
 
             <c:forEach items="${members}" var="member">
@@ -62,7 +62,7 @@
                     <div class="profile-columns">
                         <div class="profile-bar">
                             <div class="profile-pic">
-                                <img style="width:100%"
+                                <img class="materialboxed"
                                      src="${not empty member.getProfilePic()? member.getProfilePic() : '/resources/jpg/profile-nopic.jpg'}"/>
                             </div>
                             <div class="profile-social-media-bar" style="display: flex">
