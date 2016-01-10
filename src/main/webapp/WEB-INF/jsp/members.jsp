@@ -6,6 +6,7 @@
     <title>The Ripieno Singers - Members</title>
     <%@ include file="templates/head.jspf" %>
     <link rel="stylesheet" type="text/css" href="/resources/css/members.css"/>
+    <meta name="description" content="Get to know us more! View our member profiles." />
 </head>
 
 <body>

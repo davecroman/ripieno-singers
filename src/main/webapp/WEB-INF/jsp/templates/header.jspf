@@ -36,7 +36,7 @@
                         href="/gallery">${requestScope['javax.servlet.forward.request_uri'] == '/gallery'? '<u style="color:white"><b>Gallery</b></u>' : 'Gallery'}</a>
             </li>
             <li>
-                <a class="tooltipped" data-position="bottom" data-tooltip="Get to know more about us!"
+                <a class="tooltipped" data-position="bottom" data-tooltip="Get to know us more! View our member profiles"
                    href="/members">${requestScope['javax.servlet.forward.request_uri'] == '/members'? '<u style="color:white"><b>Members</b></u>' : 'Members'}</a>
             </li>
             <li>
