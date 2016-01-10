@@ -92,9 +92,9 @@
                             <div id="member-description${member.getId()}" class="profile-text white-text">
                                     ${member.getDescription()}
                             </div>
-                            <div style="display:flex">
-                                <div class="ripieno-button">More</div>
-                            </div>
+                            <%--<div style="display:flex">--%>
+                                <%--<div class="ripieno-button">More</div>--%>
+                            <%--</div>--%>
                         </div>
                     </div>
                 </div>
