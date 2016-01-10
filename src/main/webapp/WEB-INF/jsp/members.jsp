@@ -29,6 +29,13 @@
                 </a>
             </div>
         </sec:authorize>
+
+        <c:if test="${empty members}">
+            <div class="text-block white-text">
+                There are no members to show at the moment. Please come back later;
+            </div>
+        </c:if>
+        
         <div class="profile-list">
 
             <c:forEach items="${members}" var="member">
