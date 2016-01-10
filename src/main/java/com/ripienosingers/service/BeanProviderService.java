@@ -55,6 +55,12 @@ public class BeanProviderService {
         return retrofit.create(HomepageService.class);
     }
 
+    @Bean
+    @Autowired
+    public MembersService membersService(Retrofit retrofit) {
+        return retrofit.create(MembersService.class);
+    }
+
     @Bean(name = "authorizationKey")
     public String authorizationKey() {
         String basicAuth = "Basic " + Base64.encodeBase64String("key-3:RKXOb-Lt9AHHwg3bPrl0".getBytes());

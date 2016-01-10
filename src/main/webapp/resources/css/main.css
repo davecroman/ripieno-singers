@@ -197,7 +197,6 @@ main {
     border: 0;
     color: rgba(255, 255, 255, 0.8);
     box-sizing: content-box;
-    background-color: rgba(0,0,0,0.8);
 }
 
 .ripieno-button2:hover {
@@ -237,7 +236,7 @@ main {
     padding: 10px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
 
     .left-column {
         width: 100%;

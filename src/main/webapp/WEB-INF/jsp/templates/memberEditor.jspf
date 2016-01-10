@@ -1,0 +1,46 @@
+<div id="member-editor" class="popup-bg hide">
+    <div class="popup-container">
+        <form onSubmit="onSubmit()" action="${sectionAction}" method="POST">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <input type="hidden" id="sectionContent" name="sectionContent">
+            <input type="hidden" id="member-id" name="memberId">
+
+            <div style="display:flex;margin-bottom:5px;">
+                <a class="fa fa-times fa-2x" style="width:100%;text-align:right;"
+                   onclick="$('#member-editor').addClass('hide')"></a>
+            </div>
+            <div style="background-color: rgba(255,255,255,0.2);padding-left: 10px;">
+                <label for="i-member-name">Name</label>
+                <div style="display:flex;padding-right: 10px;">
+                    <input id="i-member-name" name="memberName" style="color:white;font-size:20px" type="text" required>
+                </div>
+            </div>
+
+            <div style="background-color: rgba(255,255,255,0.2);padding-left: 10px;">
+                <label for="i-member-title">Title</label>
+                <div style="display:flex;padding-right: 10px;">
+                    <input id="i-member-title" name="memberTitle" style="color:white;font-size:20px" type="text"
+                           required>
+                </div>
+            </div>
+
+            <div>
+                <%@ include file="/WEB-INF/jsp/templates/texteditor.jspf" %>
+            </div>
+            <div style="display:flex;background-color:rgba(255,255,255,0.2)">
+                <a href="#" class="ripieno-button2" onclick="$('#member-editor').addClass('hide')"> Back </a>
+                <button class="ripieno-button2" type="submit"> Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function editSection(memberId, memberName, memberTitle, memberDecription, memberPhoto, fbLink, twitterLink, instagramLink) {
+        $('#member-editor').removeClass('hide');
+        $('#i-member-name').val($.trim(memberName));
+        $('#i-member-title').val($.trim(memberTitle));
+        $('#member-id').val(memberId);
+        editor.setHTML(memberDecription);
+    }
+</script>
