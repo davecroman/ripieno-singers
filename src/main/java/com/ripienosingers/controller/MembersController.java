@@ -127,13 +127,13 @@ public class MembersController {
 
     private JsonObject createMember(@RequestParam String name, @RequestParam String title, @RequestParam String description, @RequestParam String facebookLink, @RequestParam String twitterLink, @RequestParam String instagramLink, @RequestParam String profilePicLink) {
         JsonObject body = new JsonObject();
-        body.addProperty("name", name);
-        body.addProperty("title", title);
+        body.addProperty("name", name.trim());
+        body.addProperty("title", title.trim());
         body.addProperty("description", description);
-        body.addProperty("facebook", facebookLink);
-        body.addProperty("twitter", twitterLink);
-        body.addProperty("instagram", instagramLink);
-        body.addProperty("profilepic", profilePicLink);
+        body.addProperty("facebook", facebookLink.trim());
+        body.addProperty("twitter", twitterLink.trim());
+        body.addProperty("instagram", instagramLink.trim());
+        body.addProperty("profilepic", profilePicLink.trim());
         return body;
     }
 }

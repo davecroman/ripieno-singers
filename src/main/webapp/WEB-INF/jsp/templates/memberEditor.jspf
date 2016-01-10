@@ -157,6 +157,10 @@
     }
 
     function forceValidate() {
+        var memberNameInput = $('#i-member-name');
+        var memberTitleInput = $('#i-member-title');
+        memberNameInput.val($.trim(memberNameInput.val()));
+        memberTitleInput.val($.trim(memberTitleInput.val()));
         var myForm = $('#member-form');
         if (!myForm[0].checkValidity()) {
             myForm.find(':submit').click();

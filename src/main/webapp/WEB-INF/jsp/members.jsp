@@ -46,7 +46,10 @@
                                          '${member.getInstagram()}');">
                                 Edit
                             </div>
-                            <div class="ripieno-button" onclick="confirmDelete(${member.getId()}, $('#member-name${member.getId()}').text())">Delete</div>
+                            <div class="ripieno-button"
+                                 onclick="confirmDelete(${member.getId()}, $('#member-name${member.getId()}').text())">
+                                Delete
+                            </div>
                         </div>
                     </sec:authorize>
                     <div class="profile-columns">
@@ -56,12 +59,19 @@
                                      src="${not empty member.getProfilePic()? member.getProfilePic() : '/resources/jpg/profile-nopic.jpg'}"/>
                             </div>
                             <div class="profile-social-media-bar" style="display: flex">
-                                <a class="profile-social-btn" href="${member.getFacebook()}" target="_blank"><i
-                                        class="fa fa-facebook fa-2x white-text"></i></a>
-                                <a class="profile-social-btn" href="${member.getTwitter()}" target="_blank"><i
-                                        class="fa fa-twitter fa-2x white-text"></i></a>
-                                <a class="profile-social-btn" href="${member.getInstagram()}" target="_blank"><i
-                                        class="fa fa-instagram fa-2x white-text"></i></a>
+                                <c:if test="${not empty member.getFacebook()}">
+                                    <a class="profile-social-btn" href="${member.getFacebook()}" target="_blank"><i
+                                            class="fa fa-facebook fa-2x white-text"></i></a>
+                                </c:if>
+                                <c:if test="${not empty member.getTwitter()}">
+                                    <a class="profile-social-btn" href="${member.getTwitter()}" target="_blank"><i
+                                            class="fa fa-twitter fa-2x white-text"></i></a>
+                                </c:if>
+                                <c:if test="${not empty member.getInstagram()}">
+                                    <a class="profile-social-btn" href="${member.getInstagram()}" target="_blank"><i
+                                            class="fa fa-instagram fa-2x white-text"></i></a>
+                                </c:if>
+
                             </div>
                         </div>
                         <div class="profile-desc">
