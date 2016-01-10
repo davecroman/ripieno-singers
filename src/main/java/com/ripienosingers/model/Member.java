@@ -16,7 +16,7 @@ public class Member {
 
     private String twitter;
 
-    private String profilePic;
+    private String profilepic;
 
     public int getId() {
         return id;
@@ -47,6 +47,6 @@ public class Member {
     }
 
     public String getProfilePic() {
-        return profilePic;
+        return profilepic;
     }
 }

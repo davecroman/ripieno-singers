@@ -1,46 +1,169 @@
 <div id="member-editor" class="popup-bg hide">
     <div class="popup-container">
-        <form onSubmit="onSubmit()" action="${sectionAction}" method="POST">
+        <div style="display:flex;margin-bottom:5px;">
+            <a class="fa fa-times fa-2x" style="width:100%;text-align:right;"
+               onclick="closePopup()"></a>
+        </div>
+        <form id="member-delete-form" method="POST">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-            <input type="hidden" id="sectionContent" name="sectionContent">
+            <div id="member-editor-confirm-delete" style="min-width: 400px;margin-top:15px">
+                <h4 class="white-text"> Confirm Deletion</h4>
+                <div class="white-text">
+                    Are you sure you want to remove this member?
+                </div>
+                <div id="member-to-delete" class="white-text" style="margin:15px">
+
+                </div>
+                <div style="display:flex;background-color:rgba(255,255,255,0.2)">
+                    <a href="#" class="ripieno-button2" onclick="closePopup()">
+                        Back
+                    </a>
+                    <button class="ripieno-button2" type="submit">
+                        Confirm
+                    </button>
+                </div>
+            </div>
+        </form>
+
+        <form id="member-form" onSubmit="onSubmit()" action="${sectionAction}" method="POST">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <input type="hidden" id="member-description" name="description">
             <input type="hidden" id="member-id" name="memberId">
 
-            <div style="display:flex;margin-bottom:5px;">
-                <a class="fa fa-times fa-2x" style="width:100%;text-align:right;"
-                   onclick="$('#member-editor').addClass('hide')"></a>
-            </div>
-            <div style="background-color: rgba(255,255,255,0.2);padding-left: 10px;">
-                <label for="i-member-name">Name</label>
-                <div style="display:flex;padding-right: 10px;">
-                    <input id="i-member-name" name="memberName" style="color:white;font-size:20px" type="text" required>
+            <div id="member-editor-section1">
+                <h4 class="white-text" style="margin:10px"> Member Details </h4>
+
+                <div style="background-color: rgba(255,255,255,0.2);padding-left: 10px;">
+                    <label for="i-member-name">Name*</label>
+                    <div style="display:flex;padding-right: 10px;">
+                        <input id="i-member-name" name="name" style="color:white;font-size:20px" type="text"
+                               required>
+                    </div>
+                </div>
+
+                <div style="background-color: rgba(255,255,255,0.2);padding-left: 10px;">
+                    <label for="i-member-title">Title*</label>
+                    <div style="display:flex;padding-right: 10px;">
+                        <input id="i-member-title" name="title" style="color:white;font-size:20px" type="text"
+                               required>
+                    </div>
+                </div>
+
+                <div>
+                    <%@ include file="/WEB-INF/jsp/templates/texteditor.jspf" %>
+                </div>
+
+                <div style="display:flex;background-color:rgba(255,255,255,0.2)">
+                    <a href="#" class="ripieno-button2" onclick="$('#member-editor').addClass('hide')"> Back </a>
+                    <a class="ripieno-button2"
+                       onclick="forceValidate();">
+                        Next
+                    </a>
                 </div>
             </div>
 
-            <div style="background-color: rgba(255,255,255,0.2);padding-left: 10px;">
-                <label for="i-member-title">Title</label>
-                <div style="display:flex;padding-right: 10px;">
-                    <input id="i-member-title" name="memberTitle" style="color:white;font-size:20px" type="text"
-                           required>
-                </div>
-            </div>
+            <div id="member-editor-section2" class="hide">
+                <h4 class="white-text" style="margin:10px"> Social Media Handles </h4>
 
-            <div>
-                <%@ include file="/WEB-INF/jsp/templates/texteditor.jspf" %>
-            </div>
-            <div style="display:flex;background-color:rgba(255,255,255,0.2)">
-                <a href="#" class="ripieno-button2" onclick="$('#member-editor').addClass('hide')"> Back </a>
-                <button class="ripieno-button2" type="submit"> Save</button>
+                <div style="background-color: rgba(255,255,255,0.2);padding-left: 10px;">
+                    <label for="i-member-profile-pic">Profile Picture Link (Optional)</label>
+                    <div style="display:flex;padding-right: 10px;">
+                        <input id="i-member-profile-pic" name="profilePicLink" style="color:white;font-size:20px"
+                               type="text">
+                    </div>
+                </div>
+
+                <div style="background-color: rgba(255,255,255,0.2);padding-left: 10px;">
+                    <label for="i-member-facebook">Facebook Link (Optional)</label>
+                    <div style="display:flex;padding-right: 10px;">
+                        <input id="i-member-facebook" name="facebookLink" style="color:white;font-size:20px"
+                               type="text">
+                    </div>
+                </div>
+                <div style="background-color: rgba(255,255,255,0.2);padding-left: 10px;">
+                    <label for="i-member-twitter">Twitter Link (Optional)</label>
+                    <div style="display:flex;padding-right: 10px;">
+                        <input id="i-member-twitter" name="twitterLink" style="color:white;font-size:20px" type="text">
+                    </div>
+                </div>
+                <div style="background-color: rgba(255,255,255,0.2);padding-left: 10px;">
+                    <label for="i-member-instagram">Instagram Link (Optional) </label>
+                    <div style="display:flex;padding-right: 10px;">
+                        <input id="i-member-instagram" name="instagramLink" style="color:white;font-size:20px"
+                               type="text">
+                    </div>
+                </div>
+
+
+                <div style="display:flex;background-color:rgba(255,255,255,0.2)">
+                    <a href="#" class="ripieno-button2" onclick="goBackToFirstSectionOfForm();"> Back </a>
+                    <button class="ripieno-button2" type="submit">Save</button>
+                </div>
             </div>
         </form>
     </div>
 </div>
 
 <script>
-    function editSection(memberId, memberName, memberTitle, memberDecription, memberPhoto, fbLink, twitterLink, instagramLink) {
-        $('#member-editor').removeClass('hide');
+    function editMember(memberId, memberName, memberTitle, memberDecription, memberPhoto, fbLink, twitterLink, instagramLink) {
+        goBackToFirstSectionOfForm();
+        $('#member-form').attr('action', '/members/edit/' + memberId);
+        $('#member-id').val(memberId);
         $('#i-member-name').val($.trim(memberName));
         $('#i-member-title').val($.trim(memberTitle));
-        $('#member-id').val(memberId);
+        $('#i-member-facebook').val(fbLink);
+        $('#i-member-twitter').val(twitterLink);
+        $('#i-member-instagram').val(instagramLink);
+        $('#i-member-profile-pic').val(memberPhoto);
         editor.setHTML(memberDecription);
     }
+
+    function addMember() {
+        goBackToFirstSectionOfForm();
+        $('#member-form').attr('action', '/members/add');
+        $('#member-id').val("");
+        $('#i-member-name').val("");
+        $('#i-member-title').val("");
+        $('#i-member-facebook').val("");
+        $('#i-member-twitter').val("");
+        $('#i-member-instagram').val("");
+        $('#i-member-profile-pic').val("");
+        editor.setHTML("<div>Write something here</div>")
+    }
+
+    function goBackToFirstSectionOfForm() {
+        $('#member-editor').removeClass('hide');
+        $('#member-editor-section1').removeClass('hide');
+        $('#member-editor-section2').addClass('hide');
+        $('#member-delete-form').addClass('hide');
+        $('#member-form').removeClass('hide');
+    }
+
+    function confirmDelete(memberId, memberName) {
+        $('#member-editor').removeClass('hide');
+        $('#member-delete-form').attr('action', '/members/delete/' + memberId);
+        $('#member-delete-form').removeClass('hide');
+        $('#member-form').addClass('hide');
+        $('#member-to-delete').html('<b>' + memberName + '</b>');
+    }
+
+    function onSubmit() {
+        $('#member-description').val(editor.getHTML());
+    }
+
+    function closePopup() {
+        goBackToFirstSectionOfForm();
+        $('#member-editor').addClass('hide');
+    }
+
+    function forceValidate() {
+        var myForm = $('#member-form');
+        if (!myForm[0].checkValidity()) {
+            myForm.find(':submit').click();
+        }else{
+            $('#member-editor-section1').addClass('hide');
+            $('#member-editor-section2').removeClass('hide');
+        }
+    }
+
 </script>
