@@ -18,6 +18,7 @@
 
 .profile-bar {
     margin: 0 5px;
+    width: 60%;
 }
 
 .profile-pic {
@@ -124,6 +125,10 @@
     .profile-pic {
         width: 65%;
         margin: 10px auto;
+    }
+
+    .profile-bar {
+        width: 100%;
     }
 
 }
