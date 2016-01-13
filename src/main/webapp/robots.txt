@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /members/delete
+Disallow: /members/edit
+Disallow: /members/add
