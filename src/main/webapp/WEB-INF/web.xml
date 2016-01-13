@@ -57,5 +57,6 @@
         <url-pattern>*.png</url-pattern>
         <url-pattern>*.ico</url-pattern>
         <url-pattern>*.xml</url-pattern>
+        <url-pattern>*.txt</url-pattern>
     </servlet-mapping>
 </web-app>
