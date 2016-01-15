@@ -43,7 +43,7 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: N; /* number of lines to show */
     line-height: 23px;
-    max-height: calc(23px * 7);       /* fallback */
+    max-height: calc(23px * 7); /* fallback */
 }
 
 .profile-name {
@@ -84,7 +84,7 @@
 }
 
 #materialbox-overlay {
-    background-color: rgba(0,0,0,0.80);
+    background-color: rgba(0, 0, 0, 0.80);
 }
 
 @media (max-width: 900px) {
@@ -116,6 +116,21 @@
     }
 }
 
+.search-bar {
+    display: flex;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+input, select, textarea {
+    color: #dddddd;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: black;
+    background-image: none;
+}
+
 @media (max-width: 500px) {
     .profile-columns {
         display: block;
@@ -128,6 +143,11 @@
 
     .profile-bar {
         width: 100%;
+    }
+
+    .search-bar {
+        margin-left: 5%;
+        margin-right: 5%;
     }
 
 }

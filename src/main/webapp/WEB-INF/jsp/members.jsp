@@ -6,7 +6,7 @@
     <title>The Ripieno Singers - Members</title>
     <%@ include file="templates/head.jspf" %>
     <link rel="stylesheet" type="text/css" href="/resources/css/members.css"/>
-    <meta name="description" content="Get to know us more! View our member profiles." />
+    <meta name="description" content="Get to know us more! View our member profiles."/>
 </head>
 
 <body>
@@ -30,6 +30,12 @@
                 </a>
             </div>
         </sec:authorize>
+        <div id="search-bar" class="search-bar">
+            <div class="valign-wrapper with-margin-left-right">
+                <i class="valign white-text fa fa-search fa-2x"></i>
+            </div>
+            <input id="search" type="search">
+        </div>
 
         <c:if test="${empty members}">
             <div class="text-block white-text">
@@ -92,9 +98,9 @@
                             <div id="member-description${member.getId()}" class="profile-text white-text">
                                     ${member.getDescription()}
                             </div>
-                            <%--<div style="display:flex">--%>
+                                <%--<div style="display:flex">--%>
                                 <%--<div class="ripieno-button">More</div>--%>
-                            <%--</div>--%>
+                                <%--</div>--%>
                         </div>
                     </div>
                 </div>
@@ -104,6 +110,18 @@
 </main>
 
 <%@ include file="templates/footer.jspf" %>
+<script>
+    $('#search').bind("change paste keyup", function () {
+        var query = $('#search').val().toLowerCase();
+        $('.profile-name').each(function () {
+            if ($(this).text().trim().toLowerCase().indexOf(query) > -1) {
+                $(this).closest('.profile-block').removeClass('hide');
+            } else {
+                $(this).closest('.profile-block').addClass('hide');
+            }
+        })
+    });
+</script>
 </body>
 
 </html>
