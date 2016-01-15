@@ -122,15 +122,6 @@
     margin-right: 25%;
 }
 
-input, select, textarea {
-    color: #dddddd;
-}
-
-input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-    background-color: black;
-    background-image: none;
-}
-
 @media (max-width: 500px) {
     .profile-columns {
         display: block;

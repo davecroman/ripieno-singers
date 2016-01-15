@@ -1,6 +1,6 @@
 package com.ripienosingers.model;
 
-public class Member {
+public class Member implements Comparable<Member> {
 
     private int id;
 
@@ -17,6 +17,8 @@ public class Member {
     private String twitter;
 
     private String profilepic;
+
+    private int order;
 
     public int getId() {
         return id;
@@ -48,5 +50,14 @@ public class Member {
 
     public String getProfilePic() {
         return profilepic;
+    }
+
+    public int getOrder() {
+        return order;
+    }
+
+    @Override
+    public int compareTo(Member otherMember) {
+        return Integer.compare(this.getOrder(), otherMember.getOrder());
     }
 }

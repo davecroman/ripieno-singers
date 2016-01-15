@@ -20,7 +20,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic()
                 .and()
                     .authorizeRequests()
-                .antMatchers("/admin/**", "/news/add", "/news/*/confirmDelete", "/news/*/delete", "/news/editor*")
+                .antMatchers("/admin/**",
+                        "/news/add",
+                        "/news/*/confirmDelete",
+                        "/news/*/delete",
+                        "/news/editor*",
+                        "/members/*")
                     .hasRole("ADMIN")
                 .and().formLogin()
                     .loginPage("/login")

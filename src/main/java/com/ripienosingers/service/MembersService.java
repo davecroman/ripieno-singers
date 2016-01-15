@@ -12,6 +12,9 @@ public interface MembersService {
     @GET("members")
     Call<List<Member>> getMembers();
 
+    @GET("members?include=name,profilepic,title,order")
+    Call<List<Member>> getMemberNamesAndPic();
+
     @POST("members")
     Call<Member> addMember(@Header("Authorization") String authorization, @Body JsonObject body);
 

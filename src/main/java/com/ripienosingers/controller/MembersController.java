@@ -6,17 +6,15 @@ import com.ripienosingers.service.MembersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import retrofit.Call;
+import retrofit.Callback;
 import retrofit.Response;
+import retrofit.Retrofit;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
+import java.util.*;
 
 @Controller
 public class MembersController {
@@ -27,6 +25,65 @@ public class MembersController {
     @Autowired
     @Qualifier("authorizationKey")
     String basicAuth;
+
+    @RequestMapping(value = "/members/reorder", method = RequestMethod.GET)
+    public String goToReorderPage(Map<String, Object> map) {
+        List<String> notifications = new ArrayList<>();
+
+        if (map.containsKey("notifications")) {
+            notifications.addAll((List<String>) map.get("notifications"));
+        }
+
+        try {
+            Response<List<Member>> response = membersService.getMemberNamesAndPic().execute();
+            if( !response.isSuccess()) {
+                throw new Exception(response.message());
+            }
+            List<Member> members = response.body();
+            Collections.sort(members);
+            map.put("members", members);
+        } catch (Exception e) {
+            notifications.add("Oops! Something went wrong. Please try again later. Error: " + e.getMessage());
+        }
+
+        map.put("notifications", notifications);
+
+        return "membersReorder";
+    }
+
+    @RequestMapping(value = "/members/reorder", method = RequestMethod.POST, headers = {"Content-type=application/json"})
+    @ResponseBody
+    public String reorderMembers(@RequestBody Member[] members, Map<String, Object> map) {
+        List<String> notifications = new ArrayList<>();
+
+        try {
+            Response<List<Member>> response = membersService.getMemberNamesAndPic().execute();
+
+            for(Member member : members) {
+                JsonObject jsonObject = new JsonObject();
+                jsonObject.addProperty("order", member.getOrder());
+                membersService.updateMember(basicAuth, Integer.toString(member.getId()), jsonObject).enqueue(new Callback<Member>() {
+                    @Override
+                    public void onResponse(Response<Member> response, Retrofit retrofit) {
+
+                    }
+
+                    @Override
+                    public void onFailure(Throwable t) {
+
+                    }
+                });
+            }
+
+            notifications.add("Update submitted. Changes may take a while to reflect.");
+        } catch (Exception e) {
+            notifications.add("Oops! Something went wrong. Please try again later. Error: " + e.getMessage());
+        }
+
+        map.put("notifications", notifications);
+
+        return "Successful";
+    }
 
     @RequestMapping(value = "/members", method = RequestMethod.GET)
     public String goToMembersPage(Map<String, Object> map) {
@@ -43,6 +100,7 @@ public class MembersController {
                 throw new Exception(response.message());
             }
             List<Member> members = response.body();
+            Collections.sort(members);
             map.put("members", members);
         } catch (Exception e) {
             notifications.add("Oops! Something went wrong. Service may be down. Please try again later");

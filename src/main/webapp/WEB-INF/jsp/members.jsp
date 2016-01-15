@@ -28,6 +28,9 @@
                 <a class="ripieno-button" onclick="addMember();">
                     <i class="fa fa-plus"></i> Add Member
                 </a>
+                <a class="ripieno-button" href="/members/reorder">
+                    <i class="fa fa-sort"></i> Reorder
+                </a>
             </div>
         </sec:authorize>
         <div id="search-bar" class="search-bar">
@@ -58,10 +61,12 @@
                                          '${member.getFacebook()}',
                                          '${member.getTwitter()}',
                                          '${member.getInstagram()}');">
+                                <i class="fa fa-pencil"></i>
                                 Edit
                             </div>
                             <div class="ripieno-button"
                                  onclick="confirmDelete(${member.getId()}, $('#member-name${member.getId()}').text())">
+                                <i class="fa fa-trash"></i>
                                 Delete
                             </div>
                         </div>

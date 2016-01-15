@@ -21,6 +21,16 @@ main {
     flex: 1 0 auto;
 }
 
+input, select, textarea {
+    color: #dddddd;
+}
+
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: black;
+    background-image: none;
+}
+
+
 .round-button {
     display: inline-block;
     width: 90px;
@@ -201,7 +211,6 @@ main {
 
 .ripieno-button2:hover {
     color: white;
-    cursor: pointer;
     cursor: hand;
 }
 
