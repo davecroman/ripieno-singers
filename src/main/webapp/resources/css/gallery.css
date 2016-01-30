@@ -1,0 +1,116 @@
+.gallery-tab-bar {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+}
+
+.gallery-container {
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.admin-image-panel {
+    position: relative;
+    top: -220px;
+    text-align: right;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.admin-image-button {
+    color: white;
+    padding: 10px;
+    border-radius: 100px;
+    transition: .3s background-color;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin: 0 5px;
+}
+
+.admin-image-button:hover {
+    background-color: black;
+}
+
+.gallery-image {
+    height: 100%;
+    filter: grayscale(30%);
+    -webkit-filter: grayscale(50%);
+    -webkit-transition: c-webkit-filter .3s, filter .3s;
+    -moz-transition: -webkit-filter .3s, filter .3s;
+    -o-transition: -webkit-filter .3s, filter .3s;
+    transition: -webkit-filter .3s, filter .3s;
+    overflow: hidden;
+}
+
+.gallery-image:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+}
+
+.gallery-item {
+    width: calc(100% / 3 - 20px);
+    height: 250px;
+    min-width: 250px;
+    padding: 5px;
+    outline: none;
+    overflow: hidden;
+    /*border: 7px solid white;*/
+    /*margin-right: 5px;*/
+    /*margin-top: 5px;*/
+}
+
+.selected-tab {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.ui-widget-header {
+    background: none;
+    border: none;
+}
+
+.ui-widget-content {
+    background: none;
+    border: none;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: none;
+    border: none;
+}
+
+.blueimp-gallery > .next, .blueimp-gallery > .prev {
+    background: none;
+    border: none;
+
+}
+
+.ui-widget-header {
+    font-weight: normal;
+    color: white;
+}
+
+.ripieno-button2 {
+    width: auto;
+    padding: auto 35px;
+    margin: auto 5px;
+}
+
+@media (max-width: 550px) {
+
+    .gallery-item {
+        width: 100%;
+        height: auto;
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: auto;
+    }
+
+}

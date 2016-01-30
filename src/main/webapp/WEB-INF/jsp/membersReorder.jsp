@@ -99,6 +99,7 @@
                 complete: function () {
                     $("#loading-circle").addClass("hide");
                     $("#save-order").removeClass("hide");
+                    Materialize.toast('Ordering has been updated. Changes may take a while to reflect.', 4000)
                 }
             });
         }
