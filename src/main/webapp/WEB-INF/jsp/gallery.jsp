@@ -42,7 +42,7 @@
 
         <sec:authorize access="hasRole('ADMIN')">
             <div class="row center">
-                <a class="ripieno-button">
+                <a class="ripieno-button" onclick="showComingSoonMessage()">
                     <i class="fa fa-cog"></i> Manage tabs
                 </a>
             </div>
@@ -146,6 +146,10 @@
 
     function showImageAdder() {
         $('#imageAdder').removeClass('hide');
+    }
+
+    function showComingSoonMessage(){
+        Materialize.toast('This feature is coming soon', 3000)
     }
 
 </script>

@@ -16,7 +16,7 @@
         <sec:authorize access="hasRole('ADMIN')">
             <div class="admin-image-panel">
                 <div class="admin-image-button" onclick="confirmDelete($(this).closest('a').find('img').attr('src'), ${image.getId()})"><i class="fa fa-times fa-2x"></i></div>
-                <div class="admin-image-button"><i class="fa fa-pencil fa-2x"></i></div>
+                <div class="admin-image-button" onclick="showComingSoonMessage()"><i class="fa fa-pencil fa-2x"></i></div>
             </div>
         </sec:authorize>
     </a>

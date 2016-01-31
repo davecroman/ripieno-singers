@@ -37,7 +37,7 @@
                 <div style="width: 100%;margin: auto;display:flex;">
                     <div style="width:100%"><h4 class="grey-text">Slider</h4></div>
                     <div class="ripieno-button">
-                        <a style="display:flex"><i class="fa fa-pencil"></i> Manage </a>
+                        <a style="display:flex" onclick="showComingSoonMessage()"><i class="fa fa-pencil"></i> Manage </a>
                     </div>
                 </div>
             </sec:authorize>
@@ -218,7 +218,7 @@
                 <div style="width: 100%;margin: auto;display:flex;">
                     <div style="width:100%"><h4 class="grey-text">Welcome Video</h4></div>
                     <div class="ripieno-button">
-                        <a href="#" style="display:flex"><i class="fa fa-pencil"></i> Manage </a>
+                        <a style="display:flex" onclick="showComingSoonMessage()"><i class="fa fa-pencil"></i> Manage </a>
                     </div>
                 </div>
             </sec:authorize>
@@ -232,7 +232,7 @@
                 <div class="subheader"> Did you know?</div>
                 <sec:authorize access="hasRole('ADMIN')">
                     <div style="width: 100%;margin: auto;text-align: center;margin: 15px 0;">
-                        <a class="ripieno-button" href="#">
+                        <a class="ripieno-button" onclick="showComingSoonMessage()">
                             <i class="fa fa-pencil"></i> Manage
                         </a>
                     </div>
@@ -258,6 +258,10 @@
 
     function onSubmit() {
         $('#sectionContent').val(editor.getHTML());
+    }
+
+    function showComingSoonMessage(){
+        Materialize.toast('This feature is coming soon', 3000)
     }
 </script>
 
