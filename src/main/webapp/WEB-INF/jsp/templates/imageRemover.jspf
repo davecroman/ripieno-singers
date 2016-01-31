@@ -1,0 +1,57 @@
+<div id="imageRemover" class="popup-bg hide">
+    <div class="popup-container white-text">
+        <div>
+            <div style="font-size:20px">Are you sure you want to remove this photo?</div>
+            <img id="imageToRemove" style="width:400px;">
+            <div id="remove-options-panel" style="display:flex">
+                <a class="ripieno-button" onClick="hideImageRemover()">
+                    Cancel
+                </a>
+                <a class="ripieno-button" onClick="confirmRemove()">
+                    Confirm
+                </a>
+            </div>
+            <div id="remove-image-loader" class="center preloader-wrapper small active hide" style="display:flex;margin:auto">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="gap-patch">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <input id="image-to-remove-id" type="hidden" name="imageId" val="">
+        </div>
+    </div>
+</div>
+
+<script>
+    function hideImageRemover() {
+        $('#imageRemover').addClass('hide');
+    }
+
+    function confirmRemove() {
+        var imageIdToRemove = $('#image-to-remove-id').val();
+        $.ajax({
+            type: "POST",
+            url: "/gallery/remove/" + imageIdToRemove,
+            beforeSend: function () {
+                $('#remove-options-panel').addClass('hide');
+                $('#remove-image-loader').removeClass('hide');
+            },
+            complete: function () {
+                $('#imageRemover').addClass('hide');
+                $('#remove-options-panel').removeClass('hide');
+                $('#remove-image-loader').addClass('hide');
+                var selectedTab = $(".selected-tab").text();
+                $('#imageInputTable tbody').empty();
+                addRow();
+                loadImagesFromTab(selectedTab);
+            }
+        });
+    }
+</script>

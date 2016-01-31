@@ -1,5 +1,6 @@
 package com.ripienosingers.controller;
 
+import com.google.gson.JsonObject;
 import com.ripienosingers.model.GalleryImage;
 import com.ripienosingers.model.GalleryTab;
 import com.ripienosingers.model.NotificationPool;
@@ -9,14 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-import retrofit.Call;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -37,7 +33,7 @@ public class GalleryController {
     String basicAuth;
 
     @RequestMapping(value = "/gallery", method = RequestMethod.GET)
-    public String goToAdminPage(Map<String, Object> map) {
+    public String goToGallery(Map<String, Object> map) {
         List<GalleryTab> tabs = requestExecutor.execute(galleryService.getTabs(), notificationPool);
 
         map.put("tabs", tabs);
@@ -57,5 +53,26 @@ public class GalleryController {
         return new ModelAndView("galleryTab");
     }
 
+    @RequestMapping(value = "/gallery/addImages", method = RequestMethod.POST, headers = {"Content-type=application/json"})
+    public String addImages(@RequestBody GalleryImage[] images, Map<String, Object> map){
 
+        for(GalleryImage image: images){
+            JsonObject body = new JsonObject();
+
+            body.addProperty("url", image.getUrl());
+            body.addProperty("caption", image.getCaption());
+            body.addProperty("tab", image.getTab());
+
+            requestExecutor.execute(galleryService.addImage(basicAuth, body));
+        }
+
+        return "gallery";
+    }
+
+    @RequestMapping(value = "/gallery/remove/{imageId}", method = RequestMethod.POST)
+    public String removeImage(@PathVariable String imageId, Map<String, Object> map){
+        requestExecutor.execute(galleryService.removeImage(basicAuth, imageId));
+
+        return "gallery";
+    }
 }

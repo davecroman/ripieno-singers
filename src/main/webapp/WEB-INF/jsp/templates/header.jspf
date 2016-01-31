@@ -32,7 +32,7 @@
                    href="/news">${fn:startsWith(requestScope['javax.servlet.forward.request_uri'], "/news")? '<u style="color:white"><b>News</b></u>' : 'News'}</a>
             </li>
             <li>
-                <a class="tooltipped" data-position="bottom" data-tooltip="Watch out! This page is coming soon"
+                <a class="tooltipped" data-position="bottom" data-tooltip="Precious photos and videos from 2004 and beyond"
                         href="/gallery">${requestScope['javax.servlet.forward.request_uri'] == '/gallery'? '<u style="color:white"><b>Gallery</b></u>' : 'Gallery'}</a>
             </li>
             <li>

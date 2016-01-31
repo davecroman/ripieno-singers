@@ -1,6 +1,6 @@
 <div id="imageAdder" class="popup-bg hide">
     <div class="popup-container image-adder">
-        <form onSubmit="onSubmit()" action="addImages" method="POST">
+        <form id="add-images-form" onSubmit="onSubmit()" action="addImages" method="POST">
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <div style="display:flex;margin-bottom:5px;">
                 <a class="fa fa-times fa-2x" style="width:100%;text-align:right;"
@@ -9,9 +9,9 @@
 
             <table style="width:100%;" class="white-text">
                 <thead>
-                    <tr>
-                        <th id="current-tab-name"></th>
-                    </tr>
+                <tr>
+                    <th id="current-tab-name"></th>
+                </tr>
                 </thead>
             </table>
 
@@ -30,11 +30,28 @@
                 </table>
             </div>
             <div style="display:flex;margin-top:30px;">
-                <a class="ripieno-button" style="width:100%;margin:auto 5px;"
+                <a id="back-btn" class="ripieno-button" style="width:100%;margin:auto 5px;"
                    onclick="$('#imageAdder').addClass('hide')"> Back</a>
-                <button class="ripieno-button" style="width:100%;margin:auto 5px;" type="submit"> Save
-                </button>
+
+                <a id="add-images-btn" class="ripieno-button" style="width:100%;margin:auto 5px;" onclick="addImages()">
+                    Save
+                </a>
+                <div id="add-images-loader" class="center row preloader-wrapper small active hide">
+                    <div class="spinner-layer spinner-blue-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <button class="ripieno-button2 hide" type="submit">Submit</button>
         </form>
     </div>
 </div>
@@ -45,11 +62,66 @@
                 "<tr class='animated fadeIn'>" +
                 "   <td><i class='fa fa-picture-o'></i></td>" +
                 "   <td><input id='image-url' name='imageUrl' type='text' placeholder='Image URL' required></td>" +
-                "   <td><input id='image-caption' name='imageCaption' type='text' placeholder='Image Caption' required></td>" +
-                "   <td><a class='ripieno-button2' onclick='deleteRow(this)'><i class='fa fa-trash-o fa-2x'></i></a></td>"+
+                "   <td><input id='image-caption' name='imageCaption' type='text' placeholder='Image Caption'></td>" +
+                "   <td><a class='ripieno-button2' onclick='deleteRow(this)'><i class='fa fa-trash-o fa-2x'></i></a></td>" +
                 "</tr>");
     }
+
     function deleteRow(element) {
         element.closest('tr').remove();
+    }
+
+    function addImages() {
+        if (!isFormValid()) {
+            return;
+        }
+
+        var images = [];
+        $('#imageInputTable tbody tr').each(function (i, row) {
+            $row = $(row);
+            var imageUrl = $row.find('input[name=imageUrl]').val().trim();
+            var imageCaption = $row.find('input[name=imageCaption]').val().trim();
+            var tabName = $('#current-tab-name').text().trim();
+            images.push({url: imageUrl, caption: imageCaption, tab: tabName});
+
+        });
+        $.ajax({
+            type: "POST",
+            url: "/gallery/addImages",
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            beforeSend: function () {
+                $('#add-images-loader').removeClass('hide');
+                $('#add-images-btn').addClass('hide');
+                $('#back-btn').addClass('hide');
+            },
+            complete: function () {
+                $('#add-images-loader').addClass('hide');
+                $('#imageAdder').addClass('hide');
+                $('#add-images-btn').removeClass('hide');
+                $('#back-btn').removeClass('hide');
+                var selectedTab = $(".selected-tab").text();
+                $('#imageInputTable tbody').empty();
+                addRow();
+                loadImagesFromTab(selectedTab);
+
+            },
+            data: JSON.stringify(images),
+            dataType: 'json',
+            contentType: 'application/json'
+        });
+    }
+
+    function isFormValid() {
+        var myForm = $('#add-images-form');
+
+        if (!myForm[0].checkValidity()) {
+            myForm.find(':submit').click();
+            return false;
+        } else {
+            return true;
+        }
     }
 </script>

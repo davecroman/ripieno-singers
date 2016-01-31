@@ -20,6 +20,7 @@
 
     <sec:authorize access="hasRole('ADMIN')">
         <%@ include file="templates/imageAdder.jspf" %>
+        <%@ include file="templates/imageRemover.jspf" %>
     </sec:authorize>
 
     <!-- The dialog widget -->
@@ -100,8 +101,19 @@
             selectedTab = $(this);
         });
         loadImagesFromTab('2009');
+
         addRow();
+
+        setupAJAX();
     });
+
+    function setupAJAX() {
+        var token = $("input[name='_csrf']").val();
+        var header = "X-CSRF-TOKEN";
+        $(document).ajaxSend(function (e, xhr, options) {
+            xhr.setRequestHeader(header, token);
+        });
+    };
 
 
     function loadImagesFromTab(tabName) {
