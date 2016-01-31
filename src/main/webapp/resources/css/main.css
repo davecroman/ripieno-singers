@@ -273,3 +273,23 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     }
 }
 
+/* ============= Placeholder text =========== */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #555;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #555;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #555;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #555;
+}
+
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color:    #555;
+}
+

@@ -8,20 +8,22 @@ import javax.annotation.Nullable;
 
 public class RequestExecutor {
 
-    public <T> T execute(Call<T> call, NotificationPool notifPool, @Nullable String successMessage) {
+    public <T> T execute(Call<T> call, @Nullable NotificationPool notifPool, @Nullable String successMessage) {
 
         try {
             Response<?> result = call.execute();
             if (!result.isSuccess()) {
                 throw new Exception(result.message());
             }
-            if (successMessage != null) {
+            if (successMessage != null && notifPool != null) {
                 notifPool.pushSuccessMessage(successMessage);
             }
 
             return (T) result.body();
         } catch (Exception e) {
-            notifPool.pushErrorMessage("Oops! A problem occurred. ERROR: " + e.getMessage() + ". Please try again.");
+            if (notifPool != null) {
+                notifPool.pushErrorMessage("Oops! A problem occurred. ERROR: " + e.getMessage() + ". Please try again.");
+            }
             e.printStackTrace();
             return null;
         }
@@ -30,5 +32,9 @@ public class RequestExecutor {
 
     public <T> T execute(Call<T> call, NotificationPool notifPool) {
         return execute(call, notifPool, null);
+    }
+
+    public <T> T execute(Call<T> call) {
+        return execute(call, null, null);
     }
 }

@@ -16,19 +16,11 @@
 
 
 <main>
-    <c:if test="${not empty notificationPool}">
-        <div class="wrap" style="width:100%;display:block;">
-            <c:set var="notificationCount" value="0" scope="page" />
-            <c:forEach items="${notificationPool.popSuccessMessages()}" var="notificationMessage">
-                <c:set var="notificationCount" value="${notificationCount+1}" scope="page" />
-                <c:set var="notificationId" value="${'notification'.concat(notificationCount)}" scope="page" />
-                <div id="${notificationId}" style="color: white; background-color: darkgreen; padding: 10px; display: flex; margin-bottom: 5px;">
-                    <div style="width: 100%; padding: 5px;"> ${notificationMessage} </div>
-                    <div style="text-align: right;"> <a class="fa fa-times fa-2x" onclick="$('#${notificationId}').addClass('hide')"></a> </div>
-                </div>
-            </c:forEach>
-        </div>
-    </c:if>
+    <%@ include file="templates/notificationPool.jspf" %>
+
+    <sec:authorize access="hasRole('ADMIN')">
+        <%@ include file="templates/imageAdder.jspf" %>
+    </sec:authorize>
 
     <!-- The dialog widget -->
     <div id="blueimp-gallery-dialog" data-show="fade" data-hide="fade">
@@ -49,9 +41,6 @@
 
         <sec:authorize access="hasRole('ADMIN')">
             <div class="row center">
-                <a class="ripieno-button" style="margin-right:10px;">
-                    <i class="fa fa-plus"></i> Add images
-                </a>
                 <a class="ripieno-button">
                     <i class="fa fa-cog"></i> Manage tabs
                 </a>
@@ -61,54 +50,34 @@
         <div>
             <div class="gallery-tab-bar">
                 <c:forEach items="${tabs}" var="tab">
-                    <div class="ripieno-button2 gallery-tab ${tab.getName() == '2009'? 'selected-tab':''}" onclick="loadImagesFromTab(${tab.getName()})"}>
-                        ${tab.getName()}
+                    <div class="ripieno-button2 gallery-tab ${tab.getName() == '2009'? 'selected-tab':''}"
+                         onclick="loadImagesFromTab(${tab.getName()})" }>
+                            ${tab.getName()}
                     </div>
                 </c:forEach>
             </div>
-            <div id="links" class="gallery-container">
-                <a class="gallery-item" href="https://i.ytimg.com/vi/NPal5JKNBlI/maxresdefault.jpg" title="Banana"
-                   data-dialog>
-                    <img class="gallery-image" src="https://i.ytimg.com/vi/NPal5JKNBlI/maxresdefault.jpg">
-                    <sec:authorize access="hasRole('ADMIN')">
-                        <div class="admin-image-panel">
-                            <div class="admin-image-button"><i class="fa fa-times fa-2x"></i></div>
-                            <div class="admin-image-button"><i class="fa fa-pencil fa-2x"></i></div>
+            <div id="gallery-images" class="gallery-container">
+                <sec:authorize access="hasRole('ADMIN')">
+                    <div class="required row center" style="width:100%;margin:20px; text-align: center">
+                        <a class="ripieno-button" style="margin-right:10px;" onclick="showImageAdder()">
+                            <i class="fa fa-plus"></i> Add images
+                        </a>
+                    </div>
+                </sec:authorize>
+                <div id="loading-circle" class="required preloader-wrapper big active" style="margin:10px">
+                    <div class="spinner-layer spinner-blue-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
                         </div>
-                    </sec:authorize>
-                </a>
-                <a class="gallery-item" href="https://i.ytimg.com/vi/BDKSz2VrU6o/maxresdefault.jpg" title="Apple"
-                   data-dialog>
-                    <img class="gallery-image" src="https://i.ytimg.com/vi/BDKSz2VrU6o/maxresdefault.jpg" alt="Apple">
-                    <sec:authorize access="hasRole('ADMIN')">
-                        <div class="admin-image-panel">
-                            <div class="admin-image-button"><i class="fa fa-times fa-2x"></i></div>
-                            <div class="admin-image-button"><i class="fa fa-pencil fa-2x"></i></div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
                         </div>
-                    </sec:authorize>
-                </a>
-                <a class="gallery-item" href="https://upload.wikimedia.org/wikipedia/en/4/4b/PUPLHS_Chorale_Performance.jpg" title="Banana"
-                   data-dialog>
-                    <img class="gallery-image" src="https://upload.wikimedia.org/wikipedia/en/4/4b/PUPLHS_Chorale_Performance.jpg">
-                    <sec:authorize access="hasRole('ADMIN')">
-                        <div class="admin-image-panel">
-                            <div class="admin-image-button"><i class="fa fa-times fa-2x"></i></div>
-                            <div class="admin-image-button"><i class="fa fa-pencil fa-2x"></i></div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
                         </div>
-                    </sec:authorize>
-                </a>
-                <a class="gallery-item" href="https://i.ytimg.com/vi/m_n0ajM6gzo/hqdefault.jpg" title="Apple"
-                   data-dialog>
-                    <img class="gallery-image" src="https://i.ytimg.com/vi/m_n0ajM6gzo/hqdefault.jpg" alt="Apple">
-                    <sec:authorize access="hasRole('ADMIN')">
-                        <div class="admin-image-panel">
-                            <div class="admin-image-button"><i class="fa fa-times fa-2x"></i></div>
-                            <div class="admin-image-button"><i class="fa fa-pencil fa-2x"></i></div>
-                        </div>
-                    </sec:authorize>
-                </a>
+                    </div>
+                </div>
             </div>
-            >
         </div>
     </div>
 </main>
@@ -118,20 +87,30 @@
 </body>
 
 <script>
+    var isLoadingImagesFromTab = false;
     $(document).ready(function () {
+        /* Enable materialize for selections */
+        $('select').material_select();
+
+        /* Select default tab */
         var selectedTab = $(".selected-tab");
         $(".gallery-tab").click(function (event) {
             selectedTab.removeClass("selected-tab");
             $(this).addClass("selected-tab");
             selectedTab = $(this);
         });
+        loadImagesFromTab('2009');
+        addRow();
     });
 
-    $('.admin-image-button').on('click', function () {
-        return false;
-    });
 
     function loadImagesFromTab(tabName) {
+        if (isLoadingImagesFromTab) {
+            return;
+        }
+        isLoadingImagesFromTab = true;
+        $('#gallery-images').children().not('.required').remove();
+        $('#loading-circle').removeClass('hide');
         $.ajax({
             type: "GET",
             url: "/gallery/" + tabName,
@@ -139,13 +118,24 @@
                 'Accept': 'application/json'
             },
             complete: function () {
-                Materialize.toast('Images loaded successfully', 4000)
+                isLoadingImagesFromTab = false;
             },
-            success: function(data) {
-                console.log(data);
+            success: function (response) {
+                $('#loading-circle').addClass('hide');
+                $('#gallery-images').append(response);
+                $('.admin-image-button').on('click', function () {
+                    return false;
+                });
             }
         });
+        $('#image-tab').val(tabName);
+        $('#current-tab-name').text(tabName);
     }
+
+    function showImageAdder() {
+        $('#imageAdder').removeClass('hide');
+    }
+
 </script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>

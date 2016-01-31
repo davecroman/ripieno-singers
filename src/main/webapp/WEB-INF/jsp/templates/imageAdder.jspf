@@ -1,0 +1,55 @@
+<div id="imageAdder" class="popup-bg hide">
+    <div class="popup-container image-adder">
+        <form onSubmit="onSubmit()" action="addImages" method="POST">
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+            <div style="display:flex;margin-bottom:5px;">
+                <a class="fa fa-times fa-2x" style="width:100%;text-align:right;"
+                   onclick="$('#imageAdder').addClass('hide')"></a>
+            </div>
+
+            <table style="width:100%;" class="white-text">
+                <thead>
+                    <tr>
+                        <th id="current-tab-name"></th>
+                    </tr>
+                </thead>
+            </table>
+
+            <input type="hidden" id="tab-name" name="tab">
+            <div style="height:400px;overflow: scroll">
+                <table id="imageInputTable" style="width:100%;" class="white-text">
+                    <tbody></tbody>
+
+                    <tfoot>
+                    <tr>
+                        <td colspan="4" class="ripieno-button2" onclick="addRow()"><i class="fa fa-plus-circle"></i> Add
+                            more
+                        </td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div style="display:flex;margin-top:30px;">
+                <a class="ripieno-button" style="width:100%;margin:auto 5px;"
+                   onclick="$('#imageAdder').addClass('hide')"> Back</a>
+                <button class="ripieno-button" style="width:100%;margin:auto 5px;" type="submit"> Save
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    function addRow() {
+        $("#imageInputTable").find("> tbody").append(
+                "<tr class='animated fadeIn'>" +
+                "   <td><i class='fa fa-picture-o'></i></td>" +
+                "   <td><input id='image-url' name='imageUrl' type='text' placeholder='Image URL' required></td>" +
+                "   <td><input id='image-caption' name='imageCaption' type='text' placeholder='Image Caption' required></td>" +
+                "   <td><a class='ripieno-button2' onclick='deleteRow(this)'><i class='fa fa-trash-o fa-2x'></i></a></td>"+
+                "</tr>");
+    }
+    function deleteRow(element) {
+        element.closest('tr').remove();
+    }
+</script>

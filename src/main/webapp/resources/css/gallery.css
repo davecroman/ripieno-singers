@@ -69,6 +69,10 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
+.image-adder {
+    min-width: 550px;
+}
+
 .ui-widget-header {
     background: none;
     border: none;
@@ -113,4 +117,9 @@
         height: auto;
     }
 
+    .image-adder {
+        min-width: 100%;
+    }
+
 }
+
