@@ -19,6 +19,8 @@ import java.util.concurrent.TimeUnit;
 @Configuration
 public class BeanProviderService {
 
+    private static final String FIELDBOOK_API_AUTH_KEY = "FIELDBOOK_API_AUTH_KEY";
+
     @Bean
     public RequestExecutor requestExecutor() {
         return new RequestExecutor();
@@ -77,7 +79,9 @@ public class BeanProviderService {
 
     @Bean(name = "authorizationKey")
     public String authorizationKey() {
-        String basicAuth = "Basic " + Base64.encodeBase64String("key-3:RKXOb-Lt9AHHwg3bPrl0".getBytes());
+        String apiKey = System.getenv(FIELDBOOK_API_AUTH_KEY);
+
+        String basicAuth = "Basic " + Base64.encodeBase64String(apiKey.getBytes());
 
         return basicAuth;
     }
